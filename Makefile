@@ -15,10 +15,10 @@ all:			$(NAME)
 
 
 $(NAME):		$(OBJS) $(LIBFT)
-				$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lX11 -lm -lz -o $@
+				$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXest -lX11 -lm -lz -o $@
 
 %.o:			%.c
-				$(CC) $(CFLAGS) -I/usr/include/ -Imlx_linux -c $^ -o $@
+				$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -c $^ -o $@
 
 $(LIBFT):	 	$(LIBFTDIR)/*.c
 				cd $(LIBFTDIR) && make
