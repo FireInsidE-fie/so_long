@@ -6,12 +6,12 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/15 15:44:03 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/26 20:57:24 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_H
-# define SO_H
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
 // Libft
 # include "../libft/libft.h"
