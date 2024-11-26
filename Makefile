@@ -4,7 +4,8 @@ CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm
 RMFLAGS		=	-f
 SRCDIR		=	src/
-CFILES		=	$(SRCDIR)so_long.c
+CFILES		=	$(SRCDIR)so_long.c \
+				$(SRCDIR)window_utils.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	$(INCLDIR)so_long.h
