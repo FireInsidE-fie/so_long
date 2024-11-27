@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/27 10:58:29 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:29:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(void)
 	void	*mlx;
 	t_data	img;
 	void	*mlx_win;
+	int		x;
+	int		y;
 
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hewwo world!");
@@ -25,10 +27,17 @@ int	main(void)
 		&img.endian);
 	if (!img.addr)
 		return (-1);
-	put_pixel(&img, 500, 500, 0x00FF0000);
-	put_pixel(&img, 499, 500, 0x0000FF00);
-	put_pixel(&img, 500, 495, 0x000000FF);
-	put_pixel(&img, 499, 495, 0x00FFFFFF);
+	x = 500;
+	y = 500;
+	while (x < 1000)
+		put_pixel(&img, x++, y, 0x00FF0000);
+	while (y < 1000)
+		put_pixel(&img, x, y++, 0x0000FF00);
+	while (x >= 500)
+		put_pixel(&img, x--, y, 0x000000FF);
+	while (y >= 500)
+		put_pixel(&img, x, y--, 0x00FFFFFF);
+	put_pixel(&img, 750, 750, 0xFFFFFFFF);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
