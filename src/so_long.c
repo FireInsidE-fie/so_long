@@ -6,16 +6,19 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/27 11:29:28 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:58:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+#include <stdio.h> // TO REMOVE
+
 int	main(void)
 {
 	void	*mlx;
 	t_data	img;
+	t_data	celst;
 	void	*mlx_win;
 	int		x;
 	int		y;
@@ -39,5 +42,12 @@ int	main(void)
 		put_pixel(&img, x, y--, 0x00FFFFFF);
 	put_pixel(&img, 750, 750, 0xFFFFFFFF);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+	int celst_x, celst_y;
+	celst_x = 106;
+	celst_y = 187;
+	celst.img = mlx_xpm_file_to_image(mlx, "../assets/textures/celeste_sprites.xpm", &celst_x, &celst_y);
+	if (!celst.img && printf("Failed to put xpm file to image!!\n"))
+		return (-1);
+	mlx_put_image_to_window(mlx, mlx_win, celst.img, 0, 0);
 	mlx_loop(mlx);
 }
