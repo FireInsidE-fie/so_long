@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/26 21:44:54 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:58:29 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int	main(void)
 		&img.endian);
 	if (!img.addr)
 		return (-1);
-	put_pixel(&img, 50, 50, 0x00FF00000);
+	put_pixel(&img, 500, 500, 0x00FF0000);
+	put_pixel(&img, 499, 500, 0x0000FF00);
+	put_pixel(&img, 500, 495, 0x000000FF);
+	put_pixel(&img, 499, 495, 0x00FFFFFF);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
-	(void)mlx_win;
 }
