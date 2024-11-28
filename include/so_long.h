@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 10:42:51 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 10:46:51 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ typedef struct s_core
 	char	**map;			// Map pointer
 }	t_core;
 
-typedef struct s_data
+typedef struct s_img
 {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}	t_data;
+}	t_img;
 
 // Window utils functions
-void	put_pixel(t_data *data, int x, int y, uint32_t color);
+void	put_pixel(t_img *img_data, int x, int y, uint32_t color);
 
 #endif //SO_LONG_H
