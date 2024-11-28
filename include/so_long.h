@@ -6,12 +6,15 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 19:17:59 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:23:59 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+// General macros
+# define TILE_SIZE 80
 
 // XPM files paths
 # define WALL_PATH  "./assets/textures/wall.xpm"
