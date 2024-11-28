@@ -9,8 +9,8 @@ CFILES		=	$(SRCDIR)so_long.c \
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	$(INCLDIR)so_long.h
-LIBFTDIR	=	libft/
-LIBFT		=	$(LIBFTDIR)libft.a
+LIBFTDIR	=	libftprintf/
+LIBFT		=	$(LIBFTDIR)libftprintf.a
 
 all:			$(NAME)
 
