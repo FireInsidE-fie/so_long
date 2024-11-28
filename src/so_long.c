@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 13:12:34 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:16:00 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, wall.img, 0, 0);
 
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
+	mlx_hook(core.win_ptr, KeyPress, KeyPressMask, &key_pressed, &core);
 
 	mlx_loop(core.mlx_ptr);
 

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 13:09:20 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:18:25 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,13 @@ typedef struct s_img		// For an image and its associated data
 	int		endian;
 }	t_img;
 
+// General functions
+int	ft_kill(t_core *core);
+
 // Window utils functions
 void	put_pixel(t_img *img_data, int x, int y, uint32_t color);
+
+// Input functions
+int	key_pressed(int key, t_core core);
 
 #endif //SO_LONG_H
