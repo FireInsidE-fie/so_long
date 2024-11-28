@@ -6,13 +6,24 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 12:41:25 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:12:34 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-#include <stdio.h> // TO REMOVE
+/**
+ * @brief Kills the program after having freed mlx related variables.
+ *
+ * @param core The core struct containing mlx and other things to be freed.
+ */
+int	ft_kill(t_core *core)
+{
+	mlx_destroy_window(core->mlx_ptr, core->win_ptr);
+	mlx_destroy_display(core->mlx_ptr);
+	free(core->mlx_ptr);
+	exit(0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -32,9 +43,11 @@ int	main(int argc, char **argv)
 	wall.img = mlx_xpm_file_to_image(core.mlx_ptr, WALL_PATH, &size_x, &size_y);
 	wall.addr = mlx_get_data_addr(wall.img, &wall.bits_per_pixel, &wall.line_length,
 		&wall.endian);
-	if (!wall.img && printf("Failed to put xpm file to image!!\n"))
+	if (!wall.img && ft_printf("Failed to put xpm file to image!!\n"))
 		return (free(core.mlx_ptr), free(core.win_ptr), -1);
 	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, wall.img, 0, 0);
+
+	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
 
 	mlx_loop(core.mlx_ptr);
 
