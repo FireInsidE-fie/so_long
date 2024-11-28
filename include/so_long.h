@@ -6,12 +6,16 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/27 11:28:18 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 10:27:01 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+// Macros
+# define TEXTURES_FOLDER "./assets/textures/"
+# define WALL_PATH TEXTURES_FOLDER "wall.xpm"
 
 // Libft
 # include "../libft/libft.h"

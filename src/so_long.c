@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 10:27:21 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 10:28:37 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,8 @@ int	main(void)
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 
 	t_data	wall;
-	char	*path = "./assets/textures/wall.xpm";
 	int	size_x, size_y;
-	wall.img = mlx_xpm_file_to_image(mlx, path, &size_x, &size_y);
+	wall.img = mlx_xpm_file_to_image(mlx, WALL_PATH, &size_x, &size_y);
 	if (!wall.img && printf("Failed to put xpm file to image!!\n"))
 		return (-1);
 	mlx_put_image_to_window(mlx, mlx_win, wall.img, 0, 0);
