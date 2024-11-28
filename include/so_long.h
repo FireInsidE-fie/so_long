@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 13:18:25 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:53:23 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ typedef struct s_img		// For an image and its associated data
 }	t_img;
 
 // General functions
-int	ft_kill(t_core *core);
+int	ft_kill(t_core *core, int err_code);
+
+// Init functions
+t_core	init_mlx(int argc, char **argv);
 
 // Window utils functions
 void	put_pixel(t_img *img_data, int x, int y, uint32_t color);

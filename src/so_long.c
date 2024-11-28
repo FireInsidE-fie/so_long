@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 13:16:00 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:52:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
  *
  * @param core The core struct containing mlx and other things to be freed.
  */
-int	ft_kill(t_core *core)
+int	ft_kill(t_core *core, int err_code)
 {
 	mlx_destroy_window(core->mlx_ptr, core->win_ptr);
 	mlx_destroy_display(core->mlx_ptr);
 	free(core->mlx_ptr);
-	exit(0);
+	exit(err_code);
 }
 
 int	main(int argc, char **argv)
@@ -32,19 +32,15 @@ int	main(int argc, char **argv)
 	int		size_x;
 	int		size_y;
 
-	core.mlx_ptr = mlx_init();
-	if (core.mlx_ptr == NULL || argc != 2)
+	core = init_mlx(argc, argv);
+	if (core.mlx_ptr == NULL)
 		return (-1);
-	ft_printf("%s\n", argv[1]);
-	core.win_ptr = mlx_new_window(core.mlx_ptr, 1920, 1080, "Hewwo world!");
-	if (core.win_ptr == NULL)
-		return (free(core.mlx_ptr), -1);
 
 	wall.img = mlx_xpm_file_to_image(core.mlx_ptr, WALL_PATH, &size_x, &size_y);
 	wall.addr = mlx_get_data_addr(wall.img, &wall.bits_per_pixel, &wall.line_length,
 		&wall.endian);
 	if (!wall.img && ft_printf("Failed to put xpm file to image!!\n"))
-		return (free(core.mlx_ptr), free(core.win_ptr), -1);
+		ft_kill(&core, -2);
 	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, wall.img, 0, 0);
 
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
