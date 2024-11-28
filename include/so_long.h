@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 10:46:51 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:42:48 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 # define WALL_PATH TEXTURES_FOLDER "wall.xpm"
 
 // Libft
-# include "../libft/libft.h"
+# include "../libftprintf/ft_printf.h"
 
 // MinilibX
 # include "../mlx_linux/mlx.h"
 
 // Stdlib
+# include <stdlib.h>
 # include <inttypes.h>
 
 // Structs
