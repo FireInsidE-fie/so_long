@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 21:23:59 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:54:29 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,21 @@ typedef struct s_img
 	int		endian;
 }	t_img;
 
+// For holding the current map and its size
+typedef struct s_map
+{
+	char	**map;			// So_long map pointer
+	int		width;
+	int		height;
+}	t_map;
+
 // For core MLX and so_long functionalities
 typedef struct s_core
 {
 	void	*mlx_ptr;		// MLX pointer
 	void	*win_ptr;		// MLX main window pointer
 	t_img	textures[10];	// MLX image pointers
-	char	**map;			// So_long map pointer
+	t_map	map;
 }	t_core;
 
 // General functions
@@ -90,6 +98,7 @@ t_img	init_image(t_core *core, char *path);
 
 // Window utils functions
 void	put_pixel(t_img *img_data, int x, int y, uint32_t color);
+void	put_img_to_index(t_core *core, int texture, int x, int y);
 
 // Input functions
 int		key_pressed(int key, t_core core);

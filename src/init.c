@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 19:15:57 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:47:36 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ t_img	init_image(t_core *core, char *path)
 	t_img	img;
 
 	img.img = mlx_xpm_file_to_image(core->mlx_ptr, path, &img.width,
-		&img.height);
+			&img.height);
 	if (!img.img && ft_printf("[!] - Failed to init image %s!!\n", path))
 		ft_kill(core, -2);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
-		&img.endian);
+			&img.endian);
 	if (!img.addr && ft_printf("[!] - Failed to put XPM file to image!!\n"))
 		ft_kill(core, -2);
 	return (img);

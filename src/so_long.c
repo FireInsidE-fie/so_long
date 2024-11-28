@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 21:35:31 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:56:34 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ int	main(int argc, char **argv)
 
 	init_textures(&core);
 
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[WALL].img, 0, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[MADDIE1].img, 80, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[MADDIE2].img, 160, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[MADDIE3].img, 240, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[KEY1].img, 320, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[KEY2].img, 400, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[KEY3].img, 480, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[ENEMY].img, 560, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[STRAWBERRY].img, 640, 0);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[CHEST].img, 720, 0);
+	put_img_to_index(&core, WALL, 0, 0);
+	put_img_to_index(&core, MADDIE1, 1, 0);
+	put_img_to_index(&core, MADDIE2, 2, 0);
+	put_img_to_index(&core, MADDIE3, 3, 0);
+	put_img_to_index(&core, KEY1, 4, 0);
+	put_img_to_index(&core, KEY2, 5, 0);
+	put_img_to_index(&core, KEY3, 6, 0);
+	put_img_to_index(&core, ENEMY, 7, 0);
+	put_img_to_index(&core, STRAWBERRY, 8, 0);
+	put_img_to_index(&core, CHEST, 9, 0);
 
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
 	mlx_hook(core.win_ptr, KeyPress, KeyPressMask, &key_pressed, &core);
