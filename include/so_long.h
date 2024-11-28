@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 10:27:01 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 10:42:51 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@
 # include <inttypes.h>
 
 // Structs
+typedef struct s_core
+{
+	void	*mlx_ptr;		// MLX pointer
+	void	*win_ptr;		// MLX window pointer
+	void	*textures[10];	// MLX image pointers
+	char	**map;			// Map pointer
+}	t_core;
+
 typedef struct s_data
 {
 	void	*img;
