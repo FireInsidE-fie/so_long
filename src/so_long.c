@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/27 11:58:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 10:27:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(void)
 {
 	void	*mlx;
 	t_data	img;
-	t_data	celst;
 	void	*mlx_win;
 	int		x;
 	int		y;
@@ -40,14 +39,19 @@ int	main(void)
 		put_pixel(&img, x--, y, 0x000000FF);
 	while (y >= 500)
 		put_pixel(&img, x, y--, 0x00FFFFFF);
-	put_pixel(&img, 750, 750, 0xFFFFFFFF);
+	put_pixel(&img, 750, 750, 0x66FFFF00);
+	put_pixel(&img, 750, 750, 0x000000FF);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	int celst_x, celst_y;
-	celst_x = 106;
-	celst_y = 187;
-	celst.img = mlx_xpm_file_to_image(mlx, "../assets/textures/celeste_sprites.xpm", &celst_x, &celst_y);
-	if (!celst.img && printf("Failed to put xpm file to image!!\n"))
+
+	t_data	wall;
+	char	*path = "./assets/textures/wall.xpm";
+	int	size_x, size_y;
+	wall.img = mlx_xpm_file_to_image(mlx, path, &size_x, &size_y);
+	if (!wall.img && printf("Failed to put xpm file to image!!\n"))
 		return (-1);
-	mlx_put_image_to_window(mlx, mlx_win, celst.img, 0, 0);
+	mlx_put_image_to_window(mlx, mlx_win, wall.img, 0, 0);
+
 	mlx_loop(mlx);
+
+	return (0);
 }
