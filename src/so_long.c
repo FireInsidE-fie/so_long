@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 16:52:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:07:48 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,14 @@ int	ft_kill(t_core *core, int err_code)
 int	main(int argc, char **argv)
 {
 	t_core	core;
-	t_img	wall;
-	int		size_x;
-	int		size_y;
 
-	core = init_mlx(argc, argv);
-	if (core.mlx_ptr == NULL)
-		return (-1);
+	core = init_mlx(argv[1]);
+	if (argc != 2 || core.mlx_ptr == NULL)
+		return (free(core.mlx_ptr), -1);
 
-	wall.img = mlx_xpm_file_to_image(core.mlx_ptr, WALL_PATH, &size_x, &size_y);
-	wall.addr = mlx_get_data_addr(wall.img, &wall.bits_per_pixel, &wall.line_length,
-		&wall.endian);
-	if (!wall.img && ft_printf("Failed to put xpm file to image!!\n"))
-		ft_kill(&core, -2);
-	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, wall.img, 0, 0);
+	init_textures(&core);
+
+	mlx_put_image_to_window(core.mlx_ptr, core.win_ptr, core.textures[WALL].img, 0, 0);
 
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
 	mlx_hook(core.win_ptr, KeyPress, KeyPressMask, &key_pressed, &core);
