@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 17:41:02 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 22:42:16 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ void	put_img_to_index(t_core *core, int texture, int x, int y);
 
 // Map functions
 void	parse_map(t_core *core, char *path);
+void	render_map(t_core *core);
 
 // Input functions
 int		key_pressed(int key, t_core core);
