@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 17:19:34 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:41:02 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ void	parse_map(t_core *core, char *path);
 
 // Input functions
 int		key_pressed(int key, t_core core);
+void	write_map(t_core *core);
 
 #endif //SO_LONG_H

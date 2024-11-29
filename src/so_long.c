@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 17:06:55 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:41:08 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int argc, char **argv)
 		return (free(core.mlx_ptr), -1);
 
 	parse_map(&core, argv[1]);
+	write_map(&core);
 
 	init_textures(&core);
 
