@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 21:47:36 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 22:28:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ t_core	init_mlx(char *path)
 	return (core);
 }
 
+/**
+ * @brief Initializes all textures in the core struct for the game.
+ *
+ * @param core The core struct of the program.
+ */
 void	init_textures(t_core *core)
 {
 	core->textures[WALL] = init_image(core, WALL_PATH);

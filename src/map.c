@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 17:40:49 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 22:31:13 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int		check_map(t_core *core, char *path)
 
 }
 */
+
+/**
+ * @brief Prints the current map to the standard output.
+ * @param core The core struct of the program.
+ */
 void	write_map(t_core *core)
 {
 	int	i;
@@ -30,8 +35,15 @@ void	write_map(t_core *core)
 			write(1, core->map.map[i] + j++, 1);
 		i++;
 	}
+	write(1, "\n", 1);
 }
 
+/**
+ * @brief Takes a relative path and parses it into a double pointer of strings.
+ *
+ * @param core The core struct of the program.
+ * @param path The relative path to the .ber file to parse.
+ */
 void	parse_map(t_core *core, char *path)
 {
 	int		fd;
