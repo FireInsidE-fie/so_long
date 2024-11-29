@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 21:54:29 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:19:34 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 
 // Libft
 # include "../libftprintf/ft_printf.h"
+# include "../libftprintf/get_next_line.h"
 
 // MinilibX
 # include "../mlx_linux/mlx.h"
@@ -37,6 +38,7 @@
 // Stdlib
 # include <stdlib.h>
 # include <inttypes.h>
+# include <fcntl.h>
 
 // X11
 # include <X11/X.h>
@@ -99,6 +101,9 @@ t_img	init_image(t_core *core, char *path);
 // Window utils functions
 void	put_pixel(t_img *img_data, int x, int y, uint32_t color);
 void	put_img_to_index(t_core *core, int texture, int x, int y);
+
+// Map functions
+void	parse_map(t_core *core, char *path);
 
 // Input functions
 int		key_pressed(int key, t_core core);

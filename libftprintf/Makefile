@@ -11,7 +11,9 @@ SRCS=		ft_printf.c \
 			ft_printf_p.c \
 			ft_printf_s.c \
 			ft_printf_u.c \
-			ft_printf_x.c
+			ft_printf_x.c \
+			get_next_line.c \
+			get_next_line_utils.c
 OBJS=		$(SRCS:.c=.o)
 INCL=		ft_printf.h
 
