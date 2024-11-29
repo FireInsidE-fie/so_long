@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 22:50:54 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 23:24:16 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ int	main(int argc, char **argv)
 	write_map(&core);
 
 	init_textures(&core);
+	init_player(&core);
+	if (core.player.x == -1)
+		ft_kill(&core, -4);
 
 	render_map(&core);
 

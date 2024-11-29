@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/28 21:48:00 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 22:54:50 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	key_pressed(int key, t_core core)
 {
 	(void)core;
-	ft_printf("Presed key %d\n", key);
+	ft_printf("Pressed key %d\n", key);
 	return (0);
 }

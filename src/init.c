@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 22:28:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 23:23:03 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,19 @@ t_img	init_image(t_core *core, char *path)
 	if (!img.addr && ft_printf("[!] - Failed to put XPM file to image!!\n"))
 		ft_kill(core, -2);
 	return (img);
+}
+
+void	init_player(t_core *core)
+{
+	core->player.x = 0;
+	core->player.y = 0;
+	core->player.keys = 0;
+	while (core->map.map[core->player.y])
+	{
+		core->player.x = 0;
+		while (core->map.map[core->player.y][core->player.x])
+			if (core->map.map[core->player.y][core->player.x++] == 'P')
+				return ;
+		core->player.y++;
+	}
 }

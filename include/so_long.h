@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 22:42:16 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/29 23:14:18 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,13 @@ typedef struct s_map
 	int		height;
 }	t_map;
 
+typedef struct s_you
+{
+	int	x;					// Horizontal coordinates
+	int	y;					// Vertical coordinates
+	int	keys;				// Number of keys already collected
+}	t_you;
+
 // For core MLX and so_long functionalities
 typedef struct s_core
 {
@@ -88,6 +95,7 @@ typedef struct s_core
 	void	*win_ptr;		// MLX main window pointer
 	t_img	textures[10];	// MLX image pointers
 	t_map	map;
+	t_you	player;
 }	t_core;
 
 // General functions
@@ -109,5 +117,6 @@ void	render_map(t_core *core);
 // Input functions
 int		key_pressed(int key, t_core core);
 void	write_map(t_core *core);
+void	init_player(t_core *core);
 
 #endif //SO_LONG_H
