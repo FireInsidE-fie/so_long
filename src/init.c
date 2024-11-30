@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 23:23:03 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/30 14:59:45 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,12 @@ void	init_player(t_core *core)
 	{
 		core->player.x = 0;
 		while (core->map.map[core->player.y][core->player.x])
-			if (core->map.map[core->player.y][core->player.x++] == 'P')
+		{
+			if (core->map.map[core->player.y][core->player.x] == 'P')
 				return ;
+			core->player.x++;
+		}
+
 		core->player.y++;
 	}
 }
