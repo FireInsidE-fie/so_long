@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 17:19:28 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/30 20:05:16 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	init_player(t_core *core)
 				return ;
 			core->player.x++;
 		}
-
 		core->player.y++;
 	}
 }

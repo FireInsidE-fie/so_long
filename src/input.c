@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 19:57:33 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/30 20:08:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ int	key_pressed(int key, t_core *core)
 		core->player.x++;
 		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
 	}
+	else if (key == 65307) // ESC
+		ft_kill(core, 0);
+	// ft_printf("Pressed key %d\n", key);
 	return (0);
 }
