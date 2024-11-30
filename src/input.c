@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 15:21:37 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/30 16:50:05 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,28 @@
 
 int	key_pressed(int key, t_core *core)
 {
+	// Leaving a comment here for future me : why not get rid of the t_map struct?
+	// The only use for the width and height values would be when checking the map and
+	// initializing right?
 	if (key == 'w' && core->map.map[core->player.y - 1][core->player.x] != '1')
-		put_img_to_index(core, MADDIE1, core->player.x, core->player.y - 1); // Move up
+	{
+		core->player.y--;
+		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+	}
 	else if (key == 'a' && core->map.map[core->player.y][core->player.x - 1] != '1')
-		put_img_to_index(core, MADDIE1, core->player.x - 1, core->player.y); // Move left
+	{
+		core->player.x--;
+		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+	}
 	else if (key == 's' && core->map.map[core->player.y + 1][core->player.x] != '1')
-		put_img_to_index(core, MADDIE1, core->player.x, core->player.y + 1); // Move down
+	{
+		core->player.y++;
+		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+	}
 	else if (key == 'd'	&& core->map.map[core->player.y][core->player.x + 1] != '1')
-		put_img_to_index(core, MADDIE1, core->player.x + 1, core->player.y); // Move right
+	{
+		core->player.x++;
+		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+	}
 	return (0);
 }
