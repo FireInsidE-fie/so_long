@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 14:50:40 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/30 17:20:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 
 // General macros
 # define TILE_SIZE 80
+# define TEXTURE_COUNT 11
 
 // XPM files paths
-# define WALL_PATH  "./assets/textures/wall.xpm"
-# define MADDIE1_PATH  "./assets/textures/maddie1.xpm"
-# define MADDIE2_PATH  "./assets/textures/maddie2.xpm"
-# define MADDIE3_PATH  "./assets/textures/maddie3.xpm"
-# define KEY1_PATH  "./assets/textures/key1.xpm"
-# define KEY2_PATH  "./assets/textures/key2.xpm"
-# define KEY3_PATH  "./assets/textures/key3.xpm"
-# define ENEMY_PATH  "./assets/textures/enemy.xpm"
-# define STRAWBERRY_PATH  "./assets/textures/strawberry.xpm"
-# define CHEST_PATH  "./assets/textures/chest.xpm"
+# define EMPTY_PATH			"./assets/textures/empty.xpm"
+# define WALL_PATH			"./assets/textures/wall.xpm"
+# define MADDIE1_PATH		"./assets/textures/maddie1.xpm"
+# define MADDIE2_PATH		"./assets/textures/maddie2.xpm"
+# define MADDIE3_PATH		"./assets/textures/maddie3.xpm"
+# define KEY1_PATH			"./assets/textures/key1.xpm"
+# define KEY2_PATH			"./assets/textures/key2.xpm"
+# define KEY3_PATH			"./assets/textures/key3.xpm"
+# define ENEMY_PATH			"./assets/textures/enemy.xpm"
+# define STRAWBERRY_PATH	"./assets/textures/strawberry.xpm"
+# define CHEST_PATH			"./assets/textures/chest.xpm"
 
 // Libft
 # include "../libftprintf/ft_printf.h"
@@ -47,6 +49,7 @@
 // Enums
 enum e_textures
 {
+	EMPTY,
 	WALL,
 	MADDIE1,
 	MADDIE2,
@@ -93,7 +96,7 @@ typedef struct s_core
 {
 	void	*mlx_ptr;		// MLX pointer
 	void	*win_ptr;		// MLX main window pointer
-	t_img	textures[10];	// MLX image pointers
+	t_img	textures[11];	// MLX image pointers
 	t_map	map;
 	t_you	player;
 }	t_core;
@@ -109,6 +112,7 @@ t_img	init_image(t_core *core, char *path);
 // Window utils functions
 void	put_pixel(t_img *img_data, int x, int y, uint32_t color);
 void	put_img_to_index(t_core *core, int texture, int x, int y);
+void	clear_index(t_core *core, int x, int y);
 
 // Map functions
 void	parse_map(t_core *core, char *path);

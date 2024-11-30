@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 14:59:45 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/30 17:19:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_core	init_mlx(char *path)
  */
 void	init_textures(t_core *core)
 {
+	core->textures[EMPTY] = init_image(core, EMPTY_PATH);
 	core->textures[WALL] = init_image(core, WALL_PATH);
 	core->textures[MADDIE1] = init_image(core, MADDIE1_PATH);
 	core->textures[MADDIE2] = init_image(core, MADDIE2_PATH);
