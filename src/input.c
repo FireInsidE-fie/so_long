@@ -6,11 +6,39 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 20:08:31 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/30 21:10:01 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	move_up(t_core *core)
+{
+	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	core->player.y--;
+	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+}
+
+void	move_left(t_core *core)
+{
+	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	core->player.x--;
+	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+}
+
+void	move_down(t_core *core)
+{
+	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	core->player.y++;
+	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+}
+
+void	move_right(t_core *core)
+{
+	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	core->player.x++;
+	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+}
 
 int	key_pressed(int key, t_core *core)
 {
@@ -18,29 +46,13 @@ int	key_pressed(int key, t_core *core)
 	// The only use for the width and height values would be when checking the map and
 	// initializing right?
 	if (key == 'w' && core->map.map[core->player.y - 1][core->player.x] != '1')
-	{
-		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
-		core->player.y--;
-		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
-	}
+		move_up(core);
 	else if (key == 'a' && core->map.map[core->player.y][core->player.x - 1] != '1')
-	{
-		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
-		core->player.x--;
-		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
-	}
+		move_left(core);
 	else if (key == 's' && core->map.map[core->player.y + 1][core->player.x] != '1')
-	{
-		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
-		core->player.y++;
-		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
-	}
+		move_down(core);
 	else if (key == 'd'	&& core->map.map[core->player.y][core->player.x + 1] != '1')
-	{
-		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
-		core->player.x++;
-		put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
-	}
+		move_right(core);
 	else if (key == 65307) // ESC
 		ft_kill(core, 0);
 	// ft_printf("Pressed key %d\n", key);
