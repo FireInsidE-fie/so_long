@@ -29,10 +29,8 @@
     <list default="true" id="420344e9-2d1a-4237-a59f-c033a0e6653e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/init.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/so_long.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/so_long.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +64,11 @@
     <setting file="file://$PROJECT_DIR$/include/so_long.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/so_long.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/llvm-12/llvm/IR/IntrinsicImpl.inc" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MakefileLocalSettings">
     <option name="availableProjects">
@@ -207,7 +210,7 @@
       <workItem from="1732708634427" duration="9000" />
       <workItem from="1732712752621" duration="85000" />
       <workItem from="1732712846495" duration="92000" />
-      <workItem from="1733132978508" duration="6026000" />
+      <workItem from="1733132978508" duration="6753000" />
     </task>
     <servers />
   </component>

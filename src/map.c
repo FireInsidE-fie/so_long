@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 13:29:18 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:08:55 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,11 @@ void	render_map(t_core *core)
 			else if (core->map.map[y][x] == 'P')
 				put_img_to_index(core, MADDIE1, x, y);
 			else if (core->map.map[y][x] == 'E')
+			{
 				put_img_to_index(core, CHEST, x, y);
+				core->map.exit_y = y;
+				core->map.exit_x = x;
+			}
 			else if (core->map.map[y][x] == 'C' && ++core->map.collectibles)
 				put_img_to_index(core, KEY1, x, y);
 			x++;

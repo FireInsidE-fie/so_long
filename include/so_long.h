@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 13:28:49 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:07:45 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ typedef struct s_map
 	int		width;
 	int		height;
 	int		collectibles;
+	int		exit_x;
+	int		exit_y;
 }	t_map;
 
 typedef struct s_you
