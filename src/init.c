@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 20:05:16 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:06:29 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,21 @@ t_core	init_mlx(char *path)
 	if (core.win_ptr == NULL)
 		ft_kill(&core, -1);
 	return (core);
+}
+
+t_img	init_image(t_core *core, char *path)
+{
+	t_img	img;
+
+	img.img = mlx_xpm_file_to_image(core->mlx_ptr, path, &img.width,
+			&img.height);
+	if (!img.img && ft_printf("[!] - Failed to init image %s!!\n", path))
+		ft_kill(core, -2);
+	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
+			&img.endian);
+	if (!img.addr && ft_printf("[!] - Failed to put XPM file to image!!\n"))
+		ft_kill(core, -2);
+	return (img);
 }
 
 /**
@@ -44,21 +59,6 @@ void	init_textures(t_core *core)
 	core->textures[ENEMY] = init_image(core, ENEMY_PATH);
 	core->textures[STRAWBERRY] = init_image(core, STRAWBERRY_PATH);
 	core->textures[CHEST] = init_image(core, CHEST_PATH);
-}
-
-t_img	init_image(t_core *core, char *path)
-{
-	t_img	img;
-
-	img.img = mlx_xpm_file_to_image(core->mlx_ptr, path, &img.width,
-			&img.height);
-	if (!img.img && ft_printf("[!] - Failed to init image %s!!\n", path))
-		ft_kill(core, -2);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
-			&img.endian);
-	if (!img.addr && ft_printf("[!] - Failed to put XPM file to image!!\n"))
-		ft_kill(core, -2);
-	return (img);
 }
 
 void	init_player(t_core *core)

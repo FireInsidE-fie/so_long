@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 17:20:28 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:04:57 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 // General macros
 # define TILE_SIZE 80
+# define MAX_TILES 50
 # define TEXTURE_COUNT 11
 
 // XPM files paths
