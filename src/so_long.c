@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 11:22:29 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:55:23 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,14 @@ int	ft_kill(t_core *core, int err_code)
 {
 	int	i;
 
-	mlx_destroy_window(core->mlx_ptr, core->win_ptr);
-	mlx_destroy_display(core->mlx_ptr);
 	i = 0;
 	while (i < TEXTURE_COUNT)
-	{
-		free(core->textures[i++].img);
-		// mlx_destroy_image(core->mlx_ptr, core->textures[i++].img);
-		// Still some leaks from textures, but mlx_destroy_image sucks
-		// (or I just have no idea how to use it)
-	}
+		mlx_destroy_image(core->mlx_ptr, core->textures[i++].img);
 	i = 0;
 	while (i < MAX_TILES)
 		free(core->map.map[i++]);
+	mlx_destroy_window(core->mlx_ptr, core->win_ptr);
+	mlx_destroy_display(core->mlx_ptr);
 	free(core->map.map);
 	free(core->mlx_ptr);
 	exit(err_code);
