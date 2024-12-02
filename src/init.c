@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 13:35:19 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:57:14 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	init_player(t_core *core)
 {
 	core->player.y = 0;
 	core->player.keys = 0;
+	core->player.moves = 0;
 	while (core->map.map[core->player.y])
 	{
 		core->player.x = 0;

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 14:37:13 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:53:05 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	key_pressed(int key, t_core *core)
 		move_left(core);
 	else if (key == 's' && core->map.map[core->player.y + 1][core->player.x] != '1')
 		move_down(core);
-	else if (key == 'd'	&& core->map.map[core->player.y][core->player.x + 1] != '1')
+	else if (key == 'd' && core->map.map[core->player.y][core->player.x + 1] != '1')
 		move_right(core);
 	else if (key == 65307) // ESC
 		ft_kill(core, 0);
@@ -72,9 +72,15 @@ int	key_pressed(int key, t_core *core)
 		ft_printf("Picked up a key!\n");
 		core->player.keys++;
 		core->map.map[core->player.y][core->player.x] = '0';
-		if (core->player.keys >= core->map.collectibles)
+		if (core->player.keys == core->map.collectibles)
 			put_img_to_index(core, STRAWBERRY,
 				core->map.exit_x, core->map.exit_y);
+	}
+	if (core->map.map[core->player.y][core->player.x] == 'E' &&
+		core->player.keys >= core->map.collectibles)
+	{
+		ft_printf("You got the strawberry!\n");
+		ft_kill(core, 0);
 	}
 	// ft_printf("Pressed key %d\n", key); // debug
 	return (0);
