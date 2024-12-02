@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 14:08:07 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:37:13 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,40 @@
 
 void	move_up(t_core *core)
 {
-	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	if (core->map.map[core->player.y][core->player.x] != 'E')
+		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	else
+		put_img_to_index(core, CHEST, core->player.x, core->player.y);
 	core->player.y--;
 	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
 }
 
 void	move_left(t_core *core)
 {
-	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	if (core->map.map[core->player.y][core->player.x] != 'E')
+		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	else
+		put_img_to_index(core, CHEST, core->player.x, core->player.y);
 	core->player.x--;
 	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
 }
 
 void	move_down(t_core *core)
 {
-	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	if (core->map.map[core->player.y][core->player.x] != 'E')
+		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	else
+		put_img_to_index(core, CHEST, core->player.x, core->player.y);
 	core->player.y++;
 	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
 }
 
 void	move_right(t_core *core)
 {
-	put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	if (core->map.map[core->player.y][core->player.x] != 'E')
+		put_img_to_index(core, EMPTY, core->player.x, core->player.y);
+	else
+		put_img_to_index(core, CHEST, core->player.x, core->player.y);
 	core->player.x++;
 	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
 }
