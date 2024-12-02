@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 11:55:23 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:32:54 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_kill(t_core *core, int err_code)
 	i = 0;
 	while (i < MAX_TILES)
 		free(core->map.map[i++]);
+	free(core->map.map);
 	mlx_destroy_window(core->mlx_ptr, core->win_ptr);
 	mlx_destroy_display(core->mlx_ptr);
-	free(core->map.map);
 	free(core->mlx_ptr);
 	exit(err_code);
 }
