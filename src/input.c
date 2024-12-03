@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/03 11:02:53 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 20:51:53 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	key_pressed(int key, t_core *core)
 		ft_kill(core, 0);
 	if (core->map.map[core->player.y][core->player.x] == 'C')
 	{
-		ft_printf("Picked up a key!\n");
 		core->player.keys++;
+		ft_printf("Picked up a key!\n");
 		core->map.map[core->player.y][core->player.x] = '0';
 		if (core->player.keys == core->map.collectibles)
 			put_img_to_index(core, STRAWBERRY,

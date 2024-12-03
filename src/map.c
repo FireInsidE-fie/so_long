@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/03 12:56:04 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 20:50:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ int	check_items(t_core *core)
 			else if (core->map.map[y][x] == 'P')
 				player++;
 			else if (core->map.map[y][x] == 'E')
+			{
 				exit++;
+				core->map.exit_x = x;
+				core->map.exit_y = y;
+			}
 		}
 	}
 	if (exit != 1 || player != 1)
