@@ -6,20 +6,31 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 14:08:55 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 11:14:55 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-/*
-int		check_map(t_core *core, char *path)
-{
 
+/**
+ * @brief Checks if the current map is valid or not.
+ *
+ * @param core The core struct of the program.
+ * @return 0 if all is well, -1 if there's a problem with the map.
+ */
+int		check_map(t_core *core)
+{
+	/* First check for walls all around the map
+	 * then if there's only one player, one exit, and at least a collectible
+	 * oh and no other characters too
+	*/
+	// Add flood fill path checking somewhere in there
+	return (0);
 }
-*/
 
 /**
  * @brief Prints the current map to the standard output.
+ *
  * @param core The core struct of the program.
  */
 void	write_map(t_core *core)
