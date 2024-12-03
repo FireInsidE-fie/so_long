@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/03 11:14:55 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:09:32 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,27 @@
  */
 int		check_map(t_core *core)
 {
+	int	x;
+	int	y;
 	/* First check for walls all around the map
 	 * then if there's only one player, one exit, and at least a collectible
 	 * oh and no other characters too
 	*/
+	x = 0;
+	while (x < core->map.width)
+		if (core->map.map[0][x++] != '1')
+			return (-1);
+	y = 1;
+	while (y < core->map.height - 1)
+	{
+		if (core->map.map[y][0] != '1'
+			|| core->map.map[y][core->map.width - 1] != '1')
+			return (-1);
+		y++;
+	}
+	while (x < core->map.width)
+		if (core->map.map[y][x++] != '1')
+			return (-1);
 	// Add flood fill path checking somewhere in there
 	return (0);
 }
@@ -68,6 +85,10 @@ void	parse_map(t_core *core, char *path)
 	core->map.map[i] = get_next_line(fd);
 	while (core->map.map[i++])
 		core->map.map[i] = get_next_line(fd);
+	core->map.height = i - 1;
+	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
+	if (check_map(core) == -1)
+		ft_kill(core, -4);
 }
 
 void	render_map(t_core *core)

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 17:17:05 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 11:02:53 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ static void	move_player(int key, t_core *core)
 
 int	key_pressed(int key, t_core *core)
 {
-	// Leaving a comment here for future me : why not get rid of the t_map struct?
-	// The only use for the width and height values would be when checking the map and
-	// initializing right?
 	move_player(key, core);
 	if (key == 65307) // ESC
 		ft_kill(core, 0);

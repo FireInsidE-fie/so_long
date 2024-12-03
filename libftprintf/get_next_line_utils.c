@@ -6,24 +6,11 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:06:12 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 17:37:21 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 11:50:57 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-/* ft_strlen()
- * returns the size of string *s, trailing null character excluded.
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	count;
-
-	count = 0;
-	while (*(s++))
-		count++;
-	return (count);
-}
 
 /* ft_strchr()
  * locates the first occurence of the character c inside of *s, and returns a
