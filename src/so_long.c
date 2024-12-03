@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/02 13:32:54 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:26:51 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,9 @@ int	main(int argc, char **argv)
 	core = init_mlx(argv[1]);
 	if (argc != 2 || core.mlx_ptr == NULL)
 		return (free(core.mlx_ptr), -1);
-
+	init_textures(&core);
 	parse_map(&core, argv[1]);
 	write_map(&core);
-
-	init_textures(&core);
 	init_player(&core);
 	if (core.player.x == -1)
 		ft_kill(&core, -4);

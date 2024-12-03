@@ -6,11 +6,40 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/03 12:09:32 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:56:04 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+int	check_items(t_core *core)
+{
+	int	x;
+	int	y;
+	int	exit;
+	int	player;
+
+	y = -1;
+	exit = 0;
+	player = 0;
+	core->map.collectibles = 0;
+	while (++y < core->map.height)
+	{
+		x = -1;
+		while (++x < core->map.width)
+		{
+			if (core->map.map[y][x] == 'C')
+				core->map.collectibles++;
+			else if (core->map.map[y][x] == 'P')
+				player++;
+			else if (core->map.map[y][x] == 'E')
+				exit++;
+		}
+	}
+	if (exit != 1 || player != 1)
+		return (-1);
+	return (0);
+}
 
 /**
  * @brief Checks if the current map is valid or not.
@@ -18,7 +47,7 @@
  * @param core The core struct of the program.
  * @return 0 if all is well, -1 if there's a problem with the map.
  */
-int		check_map(t_core *core)
+int	check_map(t_core *core)
 {
 	int	x;
 	int	y;
@@ -38,9 +67,12 @@ int		check_map(t_core *core)
 			return (-1);
 		y++;
 	}
+	x = 0;
 	while (x < core->map.width)
 		if (core->map.map[y][x++] != '1')
 			return (-1);
+	if (check_items(core) == -1)
+		return (-1);
 	// Add flood fill path checking somewhere in there
 	return (0);
 }
@@ -97,7 +129,6 @@ void	render_map(t_core *core)
 	int	y;
 
 	y = 0;
-	core->map.collectibles = 0;
 	while (core->map.map[y])
 	{
 		x = 0;
@@ -108,12 +139,8 @@ void	render_map(t_core *core)
 			else if (core->map.map[y][x] == 'P')
 				put_img_to_index(core, MADDIE1, x, y);
 			else if (core->map.map[y][x] == 'E')
-			{
 				put_img_to_index(core, CHEST, x, y);
-				core->map.exit_y = y;
-				core->map.exit_x = x;
-			}
-			else if (core->map.map[y][x] == 'C' && ++core->map.collectibles)
+			else if (core->map.map[y][x] == 'C')
 				put_img_to_index(core, KEY1, x, y);
 			x++;
 		}

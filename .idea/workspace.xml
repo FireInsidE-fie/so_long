@@ -28,11 +28,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00af095d-6cbf-43fa-bc63-f065ba1a601f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libftprintf/get_next_line_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf/get_next_line_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/so_long.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/so_long.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +183,7 @@
       <workItem from="1732712846495" duration="92000" />
       <workItem from="1733132978508" duration="6753000" />
       <workItem from="1733155592091" duration="3146000" />
-      <workItem from="1733219813346" duration="4314000" />
+      <workItem from="1733219813346" duration="7060000" />
     </task>
     <servers />
   </component>
