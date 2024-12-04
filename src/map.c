@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/03 20:50:21 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:19:46 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,10 @@ int	check_items(t_core *core)
 			else if (core->map.map[y][x] == 'P')
 				player++;
 			else if (core->map.map[y][x] == 'E')
-			{
 				exit++;
-				core->map.exit_x = x;
-				core->map.exit_y = y;
-			}
 		}
 	}
-	if (exit != 1 || player != 1)
+	if (exit != 1 || player != 1 || core->map.collectibles < 1)
 		return (-1);
 	return (0);
 }
@@ -143,7 +139,11 @@ void	render_map(t_core *core)
 			else if (core->map.map[y][x] == 'P')
 				put_img_to_index(core, MADDIE1, x, y);
 			else if (core->map.map[y][x] == 'E')
+			{
+				core->map.exit_x = x;
+				core->map.exit_y = y;
 				put_img_to_index(core, CHEST, x, y);
+			}
 			else if (core->map.map[y][x] == 'C')
 				put_img_to_index(core, KEY1, x, y);
 			x++;
