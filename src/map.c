@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 13:47:03 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:01:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ int	check_items(t_core *core)
 				player++;
 			else if (core->map.map[y][x] == 'E')
 				exit++;
+			else if (core->map.map[y][x] == '1' || core->map.map[y][x] == '0')
+				continue ;
+			else
+				return (-1);
 		}
 	}
 	if (exit != 1 || player != 1 || core->map.collectibles < 1)
@@ -58,10 +62,7 @@ int	check_map(t_core *core)
 {
 	int	x;
 	int	y;
-	/* First check for walls all around the map
-	 * then if there's only one player, one exit, and at least a collectible
-	 * oh and no other characters too
-	*/
+
 	x = 0;
 	y = 0;
 	while (x < core->map.width)
@@ -124,7 +125,7 @@ void	parse_map(t_core *core, char *path)
 		core->map.map[i] = get_next_line(fd);
 	core->map.height = i - 1;
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
-	if (check_map(core) == -1 && ft_printf("[!] - Invalid map!"))
+	if (check_map(core) == -1 && ft_printf("[!] - Invalid map!\n"))
 		ft_kill(core, 4);
 }
 
