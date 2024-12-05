@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 		return (free(core.mlx_ptr), -1);
 	init_textures(&core);
 	parse_map(&core, argv[1]);
-	write_map(&core);
+	write_map(&core); // debug
 	init_player(&core);
 
 	render_map(&core);
