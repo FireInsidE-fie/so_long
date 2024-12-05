@@ -8,6 +8,7 @@ CFILES		=	$(SRCDIR)so_long.c \
 				$(SRCDIR)window_utils.c \
 				$(SRCDIR)init.c \
 				$(SRCDIR)input.c \
+				$(SRCDIR)flood.c \
 				$(SRCDIR)map.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
