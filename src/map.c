@@ -6,12 +6,19 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/04 11:19:46 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/05 13:47:03 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+/**
+ * @brief Checks the characters of the map for 1 player, 1 exit, at least 1
+ * collectible, and no other characters than those expected.
+ *
+ * @param core The core struct of the program.
+ * @return 0 if the checks passed, -1 otherwise.
+ */
 int	check_items(t_core *core)
 {
 	int	x;
@@ -56,17 +63,15 @@ int	check_map(t_core *core)
 	 * oh and no other characters too
 	*/
 	x = 0;
+	y = 0;
 	while (x < core->map.width)
 		if (core->map.map[0][x++] != '1')
 			return (-1);
 	y = 1;
 	while (y < core->map.height - 1)
-	{
 		if (core->map.map[y][0] != '1'
-			|| core->map.map[y][core->map.width - 1] != '1')
+			|| core->map.map[y++][core->map.width - 1] != '1')
 			return (-1);
-		y++;
-	}
 	x = 0;
 	while (x < core->map.width)
 		if (core->map.map[y][x++] != '1')
@@ -111,7 +116,7 @@ void	parse_map(t_core *core, char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		ft_kill(core, -3);
+		ft_kill(core, 3);
 	i = 0;
 	core->map.map = ft_calloc(50, sizeof(char *));
 	core->map.map[i] = get_next_line(fd);
@@ -119,8 +124,8 @@ void	parse_map(t_core *core, char *path)
 		core->map.map[i] = get_next_line(fd);
 	core->map.height = i - 1;
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
-	if (check_map(core) == -1)
-		ft_kill(core, -4);
+	if (check_map(core) == -1 && ft_printf("[!] - Invalid map!"))
+		ft_kill(core, 4);
 }
 
 void	render_map(t_core *core)
