@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 14:01:31 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:16:40 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,8 @@ int	check_map(t_core *core)
 	while (x < core->map.width)
 		if (core->map.map[y][x++] != '1')
 			return (-1);
-	if (check_items(core) == -1)
+	if (check_items(core) == -1 || check_paths(core) == -1)
 		return (-1);
-	// Add flood fill path checking somewhere in there
 	return (0);
 }
 

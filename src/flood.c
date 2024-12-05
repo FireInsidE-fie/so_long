@@ -6,24 +6,25 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:04:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 14:22:35 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/05 22:30:01 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	flood_check(t_core *core, int x, int y, int exit_found, int collectibles)
+void	flood_check(t_core *core, int x, int y, int *exit_found, int *collectibles)
 {
+	// Need to make a copy of the map, so I can modify it to only count collectibles once
+	if (core->map.map[y][x] == 'E')
+		*exit_found = 1;
+	else if (core->map.map[y][x] == 'C')
+		(*collectibles)++;
+	else if (core->map.map[y][x] == '1')
+		return ;
 	flood_check(core, x + 1, y, exit_found, collectibles);
 	flood_check(core, x, y + 1, exit_found, collectibles);
 	flood_check(core, x - 1, y, exit_found, collectibles);
 	flood_check(core, x, y - 1, exit_found, collectibles);
-
-	if (core->map.map[y][x] == 'E')
-		exit_found = 1;
-	else if (core->map.map[y][x] == 'C')
-		collectibles++;
-
 }
 
 /**
@@ -37,12 +38,14 @@ int	check_paths(t_core *core)
 {
 	int	x;
 	int	y;
+	int	exit_found;
+	int	collectibles;
 
 	y = 0;
-	while (core->map.map[y])
+	while (y < core->map.height)
 	{
 		x = 0;
-		while (core->map.map[y][x])
+		while (x < core->map.width)
 		{
 			if (core->map.map[y][x] == 'P')
 				break ;
@@ -52,10 +55,11 @@ int	check_paths(t_core *core)
 			break ;
 		y++;
 	}
-	// here's the plan : call a recursive function that performs the check,
-	// returns a value if a path is found and another if none can be found.
-	// Then we can return a value from check_paths itself depending.
-	if (flood_check(core, x, y) != 2)
+	exit_found = 0;
+	collectibles = 0;
+	flood_check(core, x, y, &exit_found, &collectibles);
+	ft_printf("%d\t%d\n", exit_found, collectibles);
+	if (exit_found != 1 || collectibles != core->map.collectibles)
 		return (-1);
 	return (0);
 }
