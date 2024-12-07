@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 23:16:17 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/07 19:15:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,4 +155,28 @@ void	render_map(t_core *core)
 		}
 		y++;
 	}
+}
+
+char	**copy_map(t_core *core)
+{
+	char	**copy;
+	int		i;
+	int		j;
+
+	copy = ft_calloc(core->map.height, sizeof(char *));
+	if (!copy)
+		return (NULL);
+	i = 0;
+	while (i < core->map.height)
+	{
+		copy[i] = ft_calloc(core->map.width, sizeof(char));
+		j = 0;
+		while (j < core->map.width)
+		{
+			copy[i][j] = core->map.map[i][j];
+			j++;
+		}
+		i++;
+	}
+	return (copy);
 }

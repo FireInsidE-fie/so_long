@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 21:10:54 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/07 19:15:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ void	clear_index(t_core *core, int x, int y);
 void	parse_map(t_core *core, char *path);
 void	render_map(t_core *core);
 int		check_paths(t_core *core);
+char	**copy_map(t_core *core);
 
 // Input functions
 int		key_pressed(int key, t_core *core);
