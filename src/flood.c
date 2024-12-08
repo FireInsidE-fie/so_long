@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:04:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/07 19:17:06 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/08 21:15:47 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	flood_check(char **map, int x, int y, int *exit_found, int *collectibles)
 		(*collectibles)++;
 	else if (map[y][x] == '1')
 		return ;
+	map[y][x] = '1';
 	flood_check(map, x, y, exit_found, collectibles);
 	flood_check(map, x, y, exit_found, collectibles);
 	flood_check(map, x, y, exit_found, collectibles);

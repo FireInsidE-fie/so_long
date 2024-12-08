@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 13:49:44 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/08 21:55:18 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
  */
 int	ft_kill(t_core *core, int err_code)
 {
+	/* Careful - a wrong file name will call ft_kill but the function will seg
+	 * fault at some point, I need to find why before doing the flood fill
+	 * stuff!
+	*/
 	int	i;
 
 	i = 0;
@@ -45,13 +49,9 @@ int	main(int argc, char **argv)
 	parse_map(&core, argv[1]);
 	write_map(&core); // debug
 	init_player(&core);
-
 	render_map(&core);
-
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
 	mlx_hook(core.win_ptr, KeyPress, KeyPressMask, &key_pressed, &core);
-
 	mlx_loop(core.mlx_ptr);
-
 	return (0);
 }

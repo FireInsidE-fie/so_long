@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/07 19:15:31 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/08 21:49:23 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ int	check_map(t_core *core)
 	while (x < core->map.width)
 		if (core->map.map[y][x++] != '1')
 			return (-1);
-	if (check_items(core) == -1 || check_paths(core) == -1)
+	//if (check_items(core) == -1 || check_paths(core) == -1)
+	if (check_items(core) == -1)
 		return (-1);
 	return (0);
 }
@@ -115,7 +116,7 @@ void	parse_map(t_core *core, char *path)
 	int		i;
 
 	fd = open(path, O_RDONLY);
-	if (fd < 0)
+	if (fd < 0 || !read(fd, 0, 0))
 		ft_kill(core, 3);
 	i = 0;
 	core->map.map = ft_calloc(50, sizeof(char *));
@@ -126,6 +127,7 @@ void	parse_map(t_core *core, char *path)
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
 	if (check_map(core) == -1 && ft_printf("Error\n[!] - Invalid map!\n"))
 		ft_kill(core, 4);
+	close(fd);
 }
 
 void	render_map(t_core *core)
