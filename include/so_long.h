@@ -127,7 +127,6 @@ char	**copy_map(t_core *core);
 
 // Input functions
 int		key_pressed(int key, t_core *core);
-void	write_map(t_core *core);
 void	init_player(t_core *core);
 
 #endif //SO_LONG_H

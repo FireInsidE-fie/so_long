@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 10:44:43 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:06:47 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,27 +81,6 @@ int	check_map(t_core *core)
 	// if (check_items(core) == -1)
 		return (-1);
 	return (0);
-}
-
-/**
- * @brief Prints the current map to the standard output.
- *
- * @param core The core struct of the program.
- */
-void	write_map(t_core *core)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (core->map.map[i])
-	{
-		j = 0;
-		while (core->map.map[i][j])
-			write(1, core->map.map[i] + j++, 1);
-		i++;
-	}
-	write(1, "\n", 1);
 }
 
 /**

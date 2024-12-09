@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 10:01:06 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:07:11 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	main(int argc, char **argv)
 		return (free(core.mlx_ptr), -1);
 	init_textures(&core);
 	parse_map(&core, argv[1]);
-	write_map(&core); // debug
 	init_player(&core);
 	render_map(&core);
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
