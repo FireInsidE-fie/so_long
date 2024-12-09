@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 10:05:14 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 10:44:43 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ int	check_map(t_core *core)
 	while (x < core->map.width)
 		if (core->map.map[y][x++] != '1')
 			return (-1);
-	//if (check_items(core) == -1 || check_paths(core) == -1)
-	if (check_items(core) == -1)
+	if (check_items(core) == -1 || check_paths(core) == -1)
+	// if (check_items(core) == -1)
 		return (-1);
 	return (0);
 }
