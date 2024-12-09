@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 23:16:54 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:06:11 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ t_core	init_mlx(char *path)
 	t_core	core;
 
 	core.mlx_ptr = mlx_init();
-	if (core.mlx_ptr == NULL && ft_printf("Error\n[!] - Failed to initialize MLX!"))
+	if (core.mlx_ptr == NULL
+		&& ft_printf("Error\n[!] - Failed to initialize MLX!"))
 		return (core);
 	ft_printf("%s\n", path);
-	core.win_ptr = mlx_new_window(core.mlx_ptr, 1920, 1080, "Hewwo world!");
-	if (core.win_ptr == NULL && ft_printf("Error\n[!] - Failed to create window!"))
+	core.win_ptr = mlx_new_window(core.mlx_ptr, 1920, 1080, "celst");
+	if (core.win_ptr == NULL
+		&& ft_printf("Error\n[!] - Failed to create window!"))
 		ft_kill(&core, 1);
 	return (core);
 }
@@ -32,11 +34,13 @@ t_img	init_image(t_core *core, char *path)
 
 	img.img = mlx_xpm_file_to_image(core->mlx_ptr, path, &img.width,
 			&img.height);
-	if (!img.img && ft_printf("Error\n[!] - Failed to init image %s!\n", path))
+	if (!img.img
+		&& ft_printf("Error\n[!] - Failed to init image %s!\n", path))
 		ft_kill(core, 2);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 			&img.endian);
-	if (!img.addr && ft_printf("Error\n[!] - Failed to get %s's address!\n", path))
+	if (!img.addr
+		&& ft_printf("Error\n[!] - Failed to get %s's address!\n", path))
 		ft_kill(core, 2);
 	return (img);
 }

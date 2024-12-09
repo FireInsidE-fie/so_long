@@ -6,11 +6,21 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:07:11 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:14:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	destroy_map(char ***map)
+{
+	int	i;
+
+	i = 0;
+	while (i < MAX_TILES)
+		free((*map)[i++]);
+	free(*map);
+}
 
 /**
  * @brief Kills the program after having freed mlx related variables.
@@ -25,12 +35,7 @@ int	ft_kill(t_core *core, int err_code)
 	while (i < TEXTURE_COUNT)
 		mlx_destroy_image(core->mlx_ptr, core->textures[i++].img);
 	if (err_code != 3)
-	{
-		i = 0;
-		while (i < MAX_TILES)
-			free(core->map.map[i++]);
-		free(core->map.map);
-	}
+		destroy_map(&(core->map.map));
 	mlx_destroy_window(core->mlx_ptr, core->win_ptr);
 	mlx_destroy_display(core->mlx_ptr);
 	free(core->mlx_ptr);

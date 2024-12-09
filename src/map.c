@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:30:43 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:37:04 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,10 @@ int	check_items(t_core *core)
 {
 	int	x;
 	int	y;
-	int	exit;
-	int	player;
+	int	sum;
 
 	y = -1;
-	exit = 0;
-	player = 0;
+	sum = 0;
 	core->map.collectibles = 0;
 	while (++y < core->map.height)
 	{
@@ -37,17 +35,15 @@ int	check_items(t_core *core)
 		{
 			if (core->map.map[y][x] == 'C')
 				core->map.collectibles++;
-			else if (core->map.map[y][x] == 'P')
-				player++;
-			else if (core->map.map[y][x] == 'E')
-				exit++;
+			else if (core->map.map[y][x] == 'P' || core->map.map[y][x] == 'E')
+				sum++;
 			else if (core->map.map[y][x] == '1' || core->map.map[y][x] == '0')
 				continue ;
 			else
 				return (-1);
 		}
 	}
-	if (exit != 1 || player != 1 || core->map.collectibles < 1)
+	if (sum != 2 || core->map.collectibles < 1)
 		return (-1);
 	return (0);
 }
@@ -78,7 +74,6 @@ int	check_map(t_core *core)
 		if (core->map.map[y][x++] != '1')
 			return (-1);
 	if (check_items(core) == -1 || check_paths(core) == -1)
-	// if (check_items(core) == -1)
 		return (-1);
 	return (0);
 }

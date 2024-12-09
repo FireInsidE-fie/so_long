@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/07 19:15:31 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:15:02 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ typedef struct s_core
 
 // General functions
 int		ft_kill(t_core *core, int err_code);
+void	destroy_map(char ***map);
 
 // Init functions
 t_core	init_mlx(char *path);

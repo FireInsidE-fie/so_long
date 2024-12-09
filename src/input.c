@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/05 13:52:17 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:33:40 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	move_player(int key, t_core *core)
 int	key_pressed(int key, t_core *core)
 {
 	move_player(key, core);
-	if (key == 65307) // ESC
+	if (key == 65307)
 		ft_kill(core, 0);
 	if (core->map.map[core->player.y][core->player.x] == 'C')
 	{
@@ -60,6 +60,5 @@ int	key_pressed(int key, t_core *core)
 		ft_printf("You got the strawberry!\n");
 		ft_kill(core, 0);
 	}
-	// ft_printf("Pressed key %d\n", key); // debug
 	return (0);
 }
