@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/08 21:49:23 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 10:05:14 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	parse_map(t_core *core, char *path)
 	int		i;
 
 	fd = open(path, O_RDONLY);
-	if (fd < 0 || !read(fd, 0, 0))
+	if (fd < 0)
 		ft_kill(core, 3);
 	i = 0;
 	core->map.map = ft_calloc(50, sizeof(char *));

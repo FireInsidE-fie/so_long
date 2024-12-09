@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/08 21:55:18 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 10:01:06 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,18 @@
  */
 int	ft_kill(t_core *core, int err_code)
 {
-	/* Careful - a wrong file name will call ft_kill but the function will seg
-	 * fault at some point, I need to find why before doing the flood fill
-	 * stuff!
-	*/
 	int	i;
 
 	i = 0;
 	while (i < TEXTURE_COUNT)
 		mlx_destroy_image(core->mlx_ptr, core->textures[i++].img);
-	i = 0;
-	while (i < MAX_TILES)
-		free(core->map.map[i++]);
-	free(core->map.map);
+	if (err_code != 3)
+	{
+		i = 0;
+		while (i < MAX_TILES)
+			free(core->map.map[i++]);
+		free(core->map.map);
+	}
 	mlx_destroy_window(core->mlx_ptr, core->win_ptr);
 	mlx_destroy_display(core->mlx_ptr);
 	free(core->mlx_ptr);
