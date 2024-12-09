@@ -6,17 +6,27 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:04:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 11:29:35 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:50:03 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+/**
+ * @brief This function is a flood fill that will walk through a map from a
+ * given starting position, and set two specific values : exit_found and
+ * collectibles when finding 'E' and 'C' characters respectively.
+ *
+ * @param map A copy of the current map to flood check through.
+ * @param x The starting x position.
+ * @param y The starting y position.
+ * @param exit_found A pointer to an int that will be set to 1 once an exit is
+ * found.
+ * @param collectibles A pointer to an int that will be incremented as
+ * collectibles are found.
+ */
 void	flood_check(char **map, int x, int y, int *exit_found, int *collectibles)
 {
-	// Need to make a copy of the map, so I can modify it to only count collectibles once
-	// As it stands the flood fill will just go on for eternity, it'll come back
-	// on already explored tiles forever
 	if (map[y][x] == 'E' && ft_printf("Exit found!\n"))
 		*exit_found = 1;
 	else if (map[y][x] == 'C' && ft_printf("Key found!\n"))
