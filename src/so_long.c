@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:14:31 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:30:34 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 {
 	t_core	core;
 
-	core = init_mlx(argv[1]);
+	core = init_mlx();
 	if (argc != 2 || core.mlx_ptr == NULL)
 		return (free(core.mlx_ptr), -1);
 	init_textures(&core);
