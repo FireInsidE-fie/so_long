@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:06:47 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:30:43 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	parse_map(t_core *core, char *path)
 	if (fd < 0)
 		ft_kill(core, 3);
 	i = 0;
-	core->map.map = ft_calloc(50, sizeof(char *));
+	core->map.map = ft_calloc(MAX_TILES, sizeof(char *));
 	core->map.map[i] = get_next_line(fd);
 	while (core->map.map[i++])
 		core->map.map[i] = get_next_line(fd);
@@ -144,7 +144,7 @@ char	**copy_map(t_core *core)
 	int		i;
 	int		j;
 
-	copy = ft_calloc(core->map.height, sizeof(char *));
+	copy = ft_calloc(MAX_TILES, sizeof(char *));
 	if (!copy)
 		return (NULL);
 	i = 0;

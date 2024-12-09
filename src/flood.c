@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:04:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:04:03 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:15:19 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  * or an exit is found. The goal is for this int to be set to the target number
  * of keys + 1 (the exit) for a map to be valid.
  */
-void	flood_check(char **map, int x, int y, int *sum)
+static void	flood_check(char **map, int x, int y, int *sum)
 {
 	if (map[y][x] == 'E' && ft_printf("Exit found!\n"))
 		(*sum)++;
@@ -48,9 +48,10 @@ void	flood_check(char **map, int x, int y, int *sum)
  */
 int	check_paths(t_core *core)
 {
-	int	x;
-	int	y;
-	int	sum;
+	int		x;
+	int		y;
+	int		sum;
+	char	**map_copy;
 
 	y = -1;
 	while (++y < core->map.height)
@@ -63,7 +64,10 @@ int	check_paths(t_core *core)
 			break ;
 	}
 	sum = 0;
-	flood_check(copy_map(core), x, y, &sum);
+	map_copy = copy_map(core);
+	if (map_copy)
+		flood_check(map_copy, x, y, &sum);
+	destroy_map(&map_copy);
 	if (sum != core->map.collectibles + 1)
 		return (-1);
 	return (0);
