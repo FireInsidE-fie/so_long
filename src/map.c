@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:37:04 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 14:09:03 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int	check_items(t_core *core)
 				return (-1);
 		}
 	}
-	if (sum != 2 || core->map.collectibles < 1)
+	if ((sum != 2 || core->map.collectibles < 1)
+		&& ft_printf("Error\n[!] - Map does not contain necessary items!\n"))
 		return (-1);
 	return (0);
 }
@@ -62,16 +63,19 @@ int	check_map(t_core *core)
 	x = 0;
 	y = 0;
 	while (x < core->map.width)
-		if (core->map.map[0][x++] != '1')
+		if (core->map.map[0][x++] != '1'
+			&& ft_printf("Error\n[!] - Map is not surrounded by walls!\n"))
 			return (-1);
 	y = 1;
 	while (y < core->map.height - 1)
-		if (core->map.map[y][0] != '1'
+		if ((core->map.map[y][0] != '1'
 			|| core->map.map[y++][core->map.width - 1] != '1')
+			&& ft_printf("Error\n[!] - Map is not surrounded by walls!\n"))
 			return (-1);
 	x = 0;
 	while (x < core->map.width)
-		if (core->map.map[y][x++] != '1')
+		if (core->map.map[y][x++] != '1'
+			&& ft_printf("Error\n[!] - Map is not surrounded by walls!\n"))
 			return (-1);
 	if (check_items(core) == -1 || check_paths(core) == -1)
 		return (-1);
@@ -99,7 +103,7 @@ void	parse_map(t_core *core, char *path)
 		core->map.map[i] = get_next_line(fd);
 	core->map.height = i - 1;
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
-	if (check_map(core) == -1 && ft_printf("Error\n[!] - Invalid map!\n"))
+	if (check_map(core) == -1)
 		ft_kill(core, 4);
 	close(fd);
 }

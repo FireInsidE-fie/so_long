@@ -6,13 +6,13 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:06:11 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:56:26 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-t_core	init_mlx(char *path)
+t_core	init_mlx(void)
 {
 	t_core	core;
 
@@ -20,7 +20,6 @@ t_core	init_mlx(char *path)
 	if (core.mlx_ptr == NULL
 		&& ft_printf("Error\n[!] - Failed to initialize MLX!"))
 		return (core);
-	ft_printf("%s\n", path);
 	core.win_ptr = mlx_new_window(core.mlx_ptr, 1920, 1080, "celst");
 	if (core.win_ptr == NULL
 		&& ft_printf("Error\n[!] - Failed to create window!"))
