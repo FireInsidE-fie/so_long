@@ -6,25 +6,34 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:56:26 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:55:04 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+/**
+ * @brief Initializes the MLX as well as a new window
+ *
+ * Shoutout to Lucy for the banger name change!
+ * @return
+ */
 t_core	init_mlx(void)
 {
 	t_core	core;
 
 	core.mlx_ptr = mlx_init();
-	if (core.mlx_ptr == NULL
-		&& ft_printf("Error\n[!] - Failed to initialize MLX!"))
-		return (core);
-	core.win_ptr = mlx_new_window(core.mlx_ptr, 1920, 1080, "celst");
-	if (core.win_ptr == NULL
+	if (core.mlx_ptr == NULL)
+		ft_printf("Error\n[!] - Failed to initialize MLX!");
+    return (core);
+}
+
+void	init_window(t_core *core)
+{
+	core->win_ptr = mlx_new_window(core->mlx_ptr, core->map.width * TILE_SIZE, core->map.height * TILE_SIZE, "c-leste");
+	if (core->win_ptr == NULL
 		&& ft_printf("Error\n[!] - Failed to create window!"))
-		ft_kill(&core, 1);
-	return (core);
+		ft_kill(core, 1);
 }
 
 t_img	init_image(t_core *core, char *path)
