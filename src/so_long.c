@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/11 19:02:43 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:54:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,19 @@ void	destroy_map(char ***map)
 	while (i < MAX_TILES)
 		free((*map)[i++]);
 	free(*map);
+}
+
+/**
+ * @brief This functions writes the given string to stderr.
+ * returns it.
+ *
+ * @param str The string to output to stderr.
+ * @return The string pointer that was given as argument.
+ */
+char	*ft_perror(char *str)
+{
+	write(2, str, ft_strlen(str));
+	return (str);
 }
 
 /**

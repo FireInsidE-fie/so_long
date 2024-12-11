@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 18:31:58 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:55:48 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ int	check_width(t_core *core)
 	while (++i < core->map.height - 1)
 	{
 		if ((int)ft_strlen(core->map.map[i]) != width
-			&& ft_printf("Error\n[!] - Map is not rectangular!\n"))
+			&& ft_perror("Error\n[!] - Map is not rectangular!\n"))
 			return (-1);
 	}
-	if ((int)ft_strlen(core->map.map[i]) != width - 1)
+	if ((int)ft_strlen(core->map.map[i]) != width - 1
+		&& ft_perror("Error\n[!] - Map is not rectangular!\n"))
 		return (-1);
 	return (0);
 }
@@ -55,14 +56,13 @@ int	check_items(t_core *core)
 				core->map.collectibles++;
 			else if (core->map.map[y][x] == 'P' || core->map.map[y][x] == 'E')
 				sum++;
-			else if (core->map.map[y][x] == '1' || core->map.map[y][x] == '0')
-				;
-			else if (ft_printf("Error\n[!] - Map contains bad characters!\n"))
+			else if (core->map.map[y][x] != '1' && core->map.map[y][x] != '0'
+			&& ft_perror("Error\n[!] - Map contains bad characters!\n"))
 				return (-1);
 		}
 	}
 	if ((sum != 2 || core->map.collectibles < 1)
-		&& ft_printf("Error\n[!] - Map does not contain necessary items!\n"))
+		&& ft_perror("Error\n[!] - Map does not contain necessary items!\n"))
 		return (-1);
 	return (0);
 }
@@ -82,18 +82,18 @@ int	check_map(t_core *core)
 	x = 0;
 	while (x < core->map.width - 1)
 		if (core->map.map[0][x++] != '1'
-			&& ft_printf("Error\n[!] - Map 1s not surrounded by walls!\n"))
+			&& ft_perror("Error\n[!] - Map 1s not surrounded by walls!\n"))
 			return (-1);
 	y = 0;
 	while (++y < core->map.height - 2)
 		if ((core->map.map[y][0] != '1'
 			|| core->map.map[y][ft_strlen(core->map.map[y]) - 2] != '1')
-			&& ft_printf("Error\n[!] - Map is not surrounded by wall2!\n"))
+			&& ft_perror("Error\n[!] - Map is not surrounded by wall2!\n"))
 			return (-1);
 	x = 0;
 	while (x < core->map.width - 1)
 		if (core->map.map[y + 1][x++] != '1'
-			&& ft_printf("Error\n[!] - Map is not surround3d by walls!\n"))
+			&& ft_perror("Error\n[!] - Map is not surround3d by walls!\n"))
 			return (-1);
 	if (check_width(core) == -1
 		|| check_items(core) == -1

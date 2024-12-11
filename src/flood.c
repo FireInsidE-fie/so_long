@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:04:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/09 13:55:27 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:48:55 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	check_paths(t_core *core)
 		flood_check(map_copy, x, y, &sum);
 	destroy_map(&map_copy);
 	if (sum != core->map.collectibles + 1
-		&& ft_printf("Error\n[!] - Map does not contain a valid path!\n"))
+		&& ft_perror("Error\n[!] - Map does not contain a valid path!\n"))
 		return (-1);
 	return (0);
 }
