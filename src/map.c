@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/11 19:55:48 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/12 22:28:58 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,21 @@ int	check_map(t_core *core)
 	int	x;
 	int	y;
 
-	// Combine top and bottom wall checking like I did for left and right?
-	x = 0;
-	while (x < core->map.width - 1)
-		if (core->map.map[0][x++] != '1'
+	x = -1;
+	while (++x < core->map.width - 1)
+		if ((core->map.map[0][x] != '1'
+			|| core->map.map[core->map.height - 1][x] != '1')
 			&& ft_perror("Error\n[!] - Map 1s not surrounded by walls!\n"))
 			return (-1);
 	y = 0;
-	while (++y < core->map.height - 2)
+	while (++y < core->map.height - 1)
+	{
+		ft_printf("%c\t%c\n", core->map.map[y][0], core->map.map[y][ft_strlen(core->map.map[y]) - 2]);
 		if ((core->map.map[y][0] != '1'
 			|| core->map.map[y][ft_strlen(core->map.map[y]) - 2] != '1')
 			&& ft_perror("Error\n[!] - Map is not surrounded by wall2!\n"))
 			return (-1);
-	x = 0;
-	while (x < core->map.width - 1)
-		if (core->map.map[y + 1][x++] != '1'
-			&& ft_perror("Error\n[!] - Map is not surround3d by walls!\n"))
-			return (-1);
+	}
 	if (check_width(core) == -1
 		|| check_items(core) == -1
 		|| check_paths(core) == -1)

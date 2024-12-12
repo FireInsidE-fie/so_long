@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/12 22:06:38 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/12 22:12:57 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,5 @@ int	key_pressed(int key, t_core *core)
 		ft_printf("You got the strawberry!\n");
 		ft_kill(core, 0);
 	}
-	ft_printf("%d\n", key);
 	return (0);
 }
