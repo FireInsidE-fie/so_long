@@ -28,13 +28,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/maps/invalid_map2.ber" beforeDir="false" afterPath="$PROJECT_DIR$/assets/maps/invalid_map2.ber" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flood.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/flood.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/init.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/so_long.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/so_long.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +58,9 @@
     &quot;accountId&quot;: &quot;4cfd0a43-b8e5-4747-9946-bc9121aa96cc&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/libftprintf/get_next_line.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MakefileLocalSettings">
     <option name="availableProjects">
       <map>
@@ -171,7 +168,10 @@
       <workItem from="1733688828420" duration="3400000" />
       <workItem from="1733733730663" duration="11870000" />
       <workItem from="1733776676482" duration="190000" />
-      <workItem from="1733939078130" duration="3331000" />
+      <workItem from="1733939078130" duration="3452000" />
+      <workItem from="1733943488414" duration="31000" />
+      <workItem from="1733944260815" duration="596000" />
+      <workItem from="1734036774739" duration="815000" />
     </task>
     <servers />
   </component>
