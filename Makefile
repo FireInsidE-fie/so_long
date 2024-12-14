@@ -12,11 +12,14 @@ CFILES			=	$(SRCDIR)so_long.c \
 					$(SRCDIR)map.c
 SRCDIR_BONUS	=	src_bonus/
 CFILES_BONUS	=	$(SRCDIR_BONUS)so_long_bonus.c \
-					$(SRCDIR_BONUS)enemy.c
+					$(SRCDIR_BONUS)window_utils_bonus.c \
+					$(SRCDIR_BONUS)init_bonus.c \
+					$(SRCDIR_BONUS)input_bonus.c \
+					$(SRCDIR_BONUS)flood_bonus.c \
+					$(SRCDIR_BONUS)map_bonus.c \
+					$(SRCDIR_BONUS)enemy_bonus.c
 OBJS			=	$(CFILES:.c=.o)
 OBJS_BONUS		=	$(CFILES_BONUS:.c=.o)
-INCLDIR			=	include/
-IFILES			=	$(INCLDIR)so_long.h
 LIBFTDIR		=	libftprintf/
 LIBFT			=	$(LIBFTDIR)libftprintf.a
 
@@ -33,7 +36,7 @@ $(LIBFT):			$(LIBFTDIR)/*.c
 					cd $(LIBFTDIR) && make
 
 clean:
-					$(RM) $(RMFLAGS) $(OBJS)
+					$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
 					cd $(LIBFTDIR) && make clean
 fclean:				clean
 					$(RM) $(RMFLAGS) $(NAME)
