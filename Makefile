@@ -12,7 +12,7 @@ CFILES			=	$(SRCDIR)so_long.c \
 					$(SRCDIR)map.c
 SRCDIR_BONUS	=	src_bonus/
 CFILES_BONUS	=	$(SRCDIR_BONUS)so_long_bonus.c \
-					$(SRCDIR_BONUS)window_utils_bonus.c \
+					$(SRCDIR_BONUS)utils_bonus.c \
 					$(SRCDIR_BONUS)init_bonus.c \
 					$(SRCDIR_BONUS)input_bonus.c \
 					$(SRCDIR_BONUS)flood_bonus.c \

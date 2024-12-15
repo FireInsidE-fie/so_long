@@ -6,12 +6,19 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/14 11:23:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:59:16 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long_bonus.h"
 
+/**
+ * @brief Updates the position of the player depending on the key that was last
+ * pressed. Supports both wasd and arrow keys.
+ *
+ * @param key The key that was pressed.
+ * @param core The core struct of the program.
+ */
 static void	update_position(int key, t_core *core)
 {
 	if ((key == 'w' || key == 65362)
@@ -29,6 +36,14 @@ static void	update_position(int key, t_core *core)
 	ft_printf("Number of moves so far : %d\n", ++core->player.moves);
 }
 
+/**
+ * @brief Checks if the desired move can be executed (is there a wall there?
+ * is the exit there or a collectible?), and if yes, calls the update_position
+ * function and updates images displayed on screen.
+ *
+ * @param key The key that was pressed.
+ * @param core The core struct of the program.
+ */
 static void	move_player(int key, t_core *core)
 {
 	if (core->map.map[core->player.y][core->player.x] != 'E')
@@ -41,6 +56,14 @@ static void	move_player(int key, t_core *core)
 	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
 }
 
+/**
+ * @brief KeyPressed hook for the MLX. Moves the player and checks for
+ * special elements on the current tile (collectibles or exits).
+ *
+ * @param key The key that was pressed.
+ * @param core The core struct of the program.
+ * @return
+ */
 int	key_pressed(int key, t_core *core)
 {
 	move_player(key, core);
@@ -49,7 +72,6 @@ int	key_pressed(int key, t_core *core)
 	if (core->map.map[core->player.y][core->player.x] == 'C')
 	{
 		core->player.keys++;
-		ft_printf("Picked up a key!\n");
 		core->map.map[core->player.y][core->player.x] = '0';
 		if (core->player.keys == core->map.collectibles)
 			put_img_to_index(core, STRAWBERRY,

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/14 11:23:44 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:59:11 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ t_core	init_mlx(void)
 	return (core);
 }
 
+/**
+ * @brief Initializes the window that will be used throughout the program.
+ *
+ * @param core The core struct of the program.
+ */
 void	init_window(t_core *core)
 {
 	core->win_ptr = mlx_new_window(core->mlx_ptr, core->map.width * TILE_SIZE,
@@ -37,6 +42,13 @@ void	init_window(t_core *core)
 		ft_kill(core, 1);
 }
 
+/**
+ * @brief Initializes a xpm image to the mlx, contained in a t_img struct.
+ *
+ * @param core The core struct of the program.
+ * @param path The relative path of the image to initialize.
+ * @return The newly initialized t_img struct.
+ */
 t_img	init_image(t_core *core, char *path)
 {
 	t_img	img;
@@ -74,6 +86,12 @@ void	init_textures(t_core *core)
 	core->textures[CHEST] = init_image(core, CHEST_PATH);
 }
 
+/**
+ * @brief Goes through the current map and sets the player's coordinates to the
+ * first 'P' character found.
+ *
+ * @param core The core struct of the program.
+ */
 void	init_player(t_core *core)
 {
 	core->player.keys = 0;

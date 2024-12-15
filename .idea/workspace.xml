@@ -30,10 +30,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/init.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/enemy_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/enemy_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/flood_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/init_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/input_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/map_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/window_utils_bonus.c" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +129,7 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Aisling Fontaine/CLionProjects/so_long/assets/maps",
+    "last_opened_file_path": "C:/Users/Aisling Fontaine/CLionProjects/so_long/src_bonus",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -137,9 +141,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\src_bonus" />
       <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\assets\maps" />
       <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\assets\maps\bonus" />
-      <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\src_bonus" />
     </key>
   </component>
   <component name="RunManager" selected="Native Application.bonus">
@@ -225,7 +229,7 @@
       <workItem from="1733944260815" duration="596000" />
       <workItem from="1734036774739" duration="2543000" />
       <workItem from="1734169067772" duration="653000" />
-      <workItem from="1734273954694" duration="3987000" />
+      <workItem from="1734273954694" duration="4752000" />
     </task>
     <servers />
   </component>
