@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/12 22:28:58 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:13:06 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ int	check_map(t_core *core)
 	y = 0;
 	while (++y < core->map.height - 1)
 	{
-		ft_printf("%c\t%c\n", core->map.map[y][0], core->map.map[y][ft_strlen(core->map.map[y]) - 2]);
 		if ((core->map.map[y][0] != '1'
 			|| core->map.map[y][ft_strlen(core->map.map[y]) - 2] != '1')
 			&& ft_perror("Error\n[!] - Map is not surrounded by wall2!\n"))
@@ -153,28 +152,4 @@ void	render_map(t_core *core)
 		}
 		y++;
 	}
-}
-
-char	**copy_map(t_core *core)
-{
-	char	**copy;
-	int		i;
-	int		j;
-
-	copy = ft_calloc(MAX_TILES, sizeof(char *));
-	if (!copy)
-		return (NULL);
-	i = 0;
-	while (i < core->map.height)
-	{
-		copy[i] = ft_calloc(core->map.width, sizeof(char));
-		j = 0;
-		while (j < core->map.width)
-		{
-			copy[i][j] = core->map.map[i][j];
-			j++;
-		}
-		i++;
-	}
-	return (copy);
 }

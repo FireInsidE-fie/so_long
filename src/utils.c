@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:27:17 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/30 17:13:42 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:10:35 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,50 @@ void	put_img_to_index(t_core *core, int texture, int x, int y)
 {
 	mlx_put_image_to_window(core->mlx_ptr, core->win_ptr,
 		core->textures[texture].img, x * TILE_SIZE, y * TILE_SIZE);
+}
+
+/**
+ * @brief Frees a map that is MAX_TILES high.
+ *
+ * @param map A pointer to the first pointer of a map.
+ */
+void	destroy_map(char ***map)
+{
+	int	i;
+
+	i = 0;
+	while (i < MAX_TILES)
+		free((*map)[i++]);
+	free(*map);
+}
+
+/**
+ * @brief Takes the core struct and allocates a copy of the map contained
+ * within.
+ *
+ * @param core The core struct of the program.
+ * @return The copied map.
+ */
+char	**copy_map(t_core *core)
+{
+	char	**copy;
+	int		i;
+	int		j;
+
+	copy = ft_calloc(MAX_TILES, sizeof(char *));
+	if (!copy)
+		return (NULL);
+	i = 0;
+	while (i < core->map.height)
+	{
+		copy[i] = ft_calloc(core->map.width, sizeof(char));
+		j = 0;
+		while (j < core->map.width)
+		{
+			copy[i][j] = core->map.map[i][j];
+			j++;
+		}
+		i++;
+	}
+	return (copy);
 }

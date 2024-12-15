@@ -6,21 +6,11 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/11 19:54:21 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:11:10 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-void	destroy_map(char ***map)
-{
-	int	i;
-
-	i = 0;
-	while (i < MAX_TILES)
-		free((*map)[i++]);
-	free(*map);
-}
 
 /**
  * @brief This functions writes the given string to stderr.
@@ -50,7 +40,7 @@ int	ft_kill(t_core *core, int err_code)
 	if (err_code != 3)
 		destroy_map(&(core->map.map));
 	if (err_code != 3 && err_code != 4)
-        mlx_destroy_window(core->mlx_ptr, core->win_ptr);
+		mlx_destroy_window(core->mlx_ptr, core->win_ptr);
 	mlx_destroy_display(core->mlx_ptr);
 	free(core->mlx_ptr);
 	exit(err_code);
