@@ -6,12 +6,19 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:13:06 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:48:06 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+/**
+ * @brief Checks if the map's width is uniform, thus verifying it is
+ * rectangular.
+ *
+ * @param core The core struct of the program.
+ * @return 0 if the map is rectangular, 1 if not.
+ */
 int	check_width(t_core *core)
 {
 	int	i;
@@ -125,6 +132,12 @@ void	parse_map(t_core *core, char *path)
 	close(fd);
 }
 
+/**
+ * @brief Renders the current map's starting position, outputting the right
+ * textures to the window's indexes.
+ *
+ * @param core The core struct of the program.
+ */
 void	render_map(t_core *core)
 {
 	int	x;
