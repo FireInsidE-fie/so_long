@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:33:28 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:16:03 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,28 @@ static void	update_position(int key, t_core *core)
 {
 	if ((key == 'w' || key == 65362)
 		&& core->map.map[core->player.y - 1][core->player.x] != '1')
+	{
 		core->player.y--;
+		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
+	}
 	else if ((key == 'a' || key == 65361)
 		&& core->map.map[core->player.y][core->player.x - 1] != '1')
+	{
 		core->player.x--;
+		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
+	}
 	else if ((key == 's' || key == 65364)
 		&& core->map.map[core->player.y + 1][core->player.x] != '1')
+	{
 		core->player.y++;
+		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
+	}
 	else if ((key == 'd' || key == 65363)
 		&& core->map.map[core->player.y][core->player.x + 1] != '1')
+	{
 		core->player.x++;
-	ft_printf("Number of moves so far : %d\n", ++core->player.moves);
+		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
+	}
 }
 
 /**

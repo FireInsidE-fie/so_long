@@ -3,6 +3,15 @@
   <component name="CMakePythonSetting">
     <option name="pythonIntegrationState" value="YES" />
   </component>
+  <component name="CidrRootsConfiguration">
+    <sourceRoots>
+      <file path="$PROJECT_DIR$/include" />
+      <file path="$PROJECT_DIR$/libftprintf" />
+      <file path="$PROJECT_DIR$/mlx_linux" />
+      <file path="$PROJECT_DIR$/src" />
+      <file path="$PROJECT_DIR$/src_bonus" />
+    </sourceRoots>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MakefileSettings">
     <option name="linkedExternalProjectsSettings">
