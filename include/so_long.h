@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:33:32 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:25:38 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ typedef struct s_core
 {
 	void	*mlx_ptr;		// MLX pointer
 	void	*win_ptr;		// MLX main window pointer
-	t_img	textures[11];	// MLX image pointers
+	t_img	textures[TEXTURE_COUNT];	// MLX image pointers
 	t_map	map;
 	t_you	player;
 }	t_core;

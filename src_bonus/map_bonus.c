@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:59:22 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:29:57 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int	check_items(t_core *core)
 			else if (core->map.map[y][x] == 'P' || core->map.map[y][x] == 'E')
 				sum++;
 			else if (core->map.map[y][x] != '1' && core->map.map[y][x] != '0'
-			&& ft_perror("Error\n[!] - Map contains bad characters!\n"))
-				return (-1);
+				&& core->map.map[y][x] != 'S')
+				return (ft_perror("Error\n[!] - Map contains bad characters!\n"), -1);
 		}
 	}
 	if ((sum != 2 || core->map.collectibles < 1)
@@ -161,6 +161,8 @@ void	render_map(t_core *core)
 			}
 			else if (core->map.map[y][x] == 'C')
 				put_img_to_index(core, KEY1, x, y);
+			else if (core->map.map[y][x] == 'S')
+				put_img_to_index(core, ENEMY, x, y);
 			x++;
 		}
 		y++;

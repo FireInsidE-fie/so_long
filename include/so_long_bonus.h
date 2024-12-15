@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/14 11:32:17 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:25:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define TILE_SIZE 80
 # define MAX_TILES 50
 # define TEXTURE_COUNT 11
+# define MAX_ENEMIES 10
 
 // XPM files paths
 # define EMPTY_PATH			"./assets/textures/empty.xpm"
@@ -96,14 +97,22 @@ typedef struct s_you
 	int	moves;				// Number of moves the player has done so far
 }	t_you;
 
+// For holding an enemy's info
+typedef struct s_enemy
+{
+	int	x;
+	int	y;
+}	t_enemy;
+
 // For core MLX and so_long functionalities
 typedef struct s_core
 {
 	void	*mlx_ptr;		// MLX pointer
 	void	*win_ptr;		// MLX main window pointer
-	t_img	textures[11];	// MLX image pointers
+	t_img	textures[TEXTURE_COUNT];	// MLX image pointers
 	t_map	map;
 	t_you	player;
+	t_enemy	enemies[MAX_ENEMIES];
 }	t_core;
 
 // General functions
