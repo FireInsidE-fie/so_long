@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:59:29 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:08:49 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 	init_textures(&core);
 	parse_map(&core, argv[1]);
 	init_player(&core);
+	init_enemies(&core);
 	init_window(&core);
 	render_map(&core);
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
