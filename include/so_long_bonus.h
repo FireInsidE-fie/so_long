@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/16 15:09:04 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:20:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,5 +143,6 @@ void	init_player(t_core *core);
 
 // Enemies functions
 void	init_enemies(t_core *core);
+void	update_enemies(t_core *core);
 
 #endif //SO_LONG_BONUS_H
