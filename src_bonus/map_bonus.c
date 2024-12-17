@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 12:23:28 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:30:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	check_items(t_core *core)
 				sum++;
 			else if (core->map.map[y][x] != '1' && core->map.map[y][x] != '0'
 				&& core->map.map[y][x] != 'S')
-				return (ft_perror("Error\n[!] - Map contains bad characters!\n"), -1);
+				return (ft_perror("Error\nMap contains bad characters!\n"), -1);
 		}
 	}
 	if ((sum != 2 || core->map.collectibles < 1)
