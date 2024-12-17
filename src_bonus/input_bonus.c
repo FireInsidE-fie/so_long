@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 16:05:28 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:46:02 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ static void	move_player(int key, t_core *core)
 	if (key == 'w' || key == 'a' || key == 's' || key == 'd'
 		|| key == 65361 || key == 65362 || key == 65363 || key == 65364)
 		update_position(key, core);
-	put_img_to_index(core, MADDIE1, core->player.x, core->player.y);
+	put_img_to_index(core, MADDIE1 + (core->animation)++ % 3,
+		core->player.x, core->player.y);
 }
 
 /**

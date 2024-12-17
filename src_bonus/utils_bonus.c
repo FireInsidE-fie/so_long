@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:27:17 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:59:35 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:37:34 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	put_pixel(t_img *img_data, int x, int y, uint32_t color)
  */
 void	put_img_to_index(t_core *core, int texture, int x, int y)
 {
+	if (texture > TEXTURE_COUNT)
+		return ;
 	mlx_put_image_to_window(core->mlx_ptr, core->win_ptr,
 		core->textures[texture].img, x * TILE_SIZE, y * TILE_SIZE);
 }

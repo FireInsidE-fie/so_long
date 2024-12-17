@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 16:05:51 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:38:09 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef struct s_img
 // For holding the current map and its size
 typedef struct s_map
 {
-	char	**map;			// So_long map pointer
+	char	**map;						// So_long map pointer
 	int		width;
 	int		height;
 	int		collectibles;
@@ -91,10 +91,10 @@ typedef struct s_map
 
 typedef struct s_you
 {
-	int	x;					// Horizontal coordinates
-	int	y;					// Vertical coordinates
-	int	keys;				// Number of keys already collected
-	int	moves;				// Number of moves the player has done so far
+	int	x;								// Horizontal coordinates
+	int	y;								// Vertical coordinates
+	int	keys;							// Number of keys already collected
+	int	moves;							// Number of moves the player has done so far
 }	t_you;
 
 // For holding an enemy's info
@@ -107,9 +107,10 @@ typedef struct s_enemy
 // For core MLX and so_long functionalities
 typedef struct s_core
 {
-	void	*mlx_ptr;		// MLX pointer
-	void	*win_ptr;		// MLX main window pointer
+	void	*mlx_ptr;					// MLX pointer
+	void	*win_ptr;					// MLX main window pointer
 	t_img	textures[TEXTURE_COUNT];	// MLX image pointers
+	int		animation;					// Incremented at each step
 	t_map	map;
 	t_you	player;
 	t_enemy	enemies[MAX_ENEMIES];
