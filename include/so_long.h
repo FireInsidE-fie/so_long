@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 18:25:38 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:48:20 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ enum e_textures
 // For an image and its associated data
 typedef struct s_img
 {
-	void	*img;			// The image pointer itself
-	char	*addr;			// The address of the image
+	void	*img;
+	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		width;
@@ -80,7 +80,7 @@ typedef struct s_img
 // For holding the current map and its size
 typedef struct s_map
 {
-	char	**map;			// So_long map pointer
+	char	**map;
 	int		width;
 	int		height;
 	int		collectibles;
@@ -90,18 +90,18 @@ typedef struct s_map
 
 typedef struct s_you
 {
-	int	x;					// Horizontal coordinates
-	int	y;					// Vertical coordinates
-	int	keys;				// Number of keys already collected
-	int	moves;				// Number of moves the player has done so far
+	int	x;
+	int	y;
+	int	keys;
+	int	moves;
 }	t_you;
 
 // For core MLX and so_long functionalities
 typedef struct s_core
 {
-	void	*mlx_ptr;		// MLX pointer
-	void	*win_ptr;		// MLX main window pointer
-	t_img	textures[TEXTURE_COUNT];	// MLX image pointers
+	void	*mlx_ptr;
+	void	*win_ptr;
+	t_img	textures[TEXTURE_COUNT];
 	t_map	map;
 	t_you	player;
 }	t_core;
