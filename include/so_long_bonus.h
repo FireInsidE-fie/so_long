@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 11:20:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:05:51 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ char	**copy_map(t_core *core);
 // Input functions
 int		key_pressed(int key, t_core *core);
 void	init_player(t_core *core);
+void	put_score(t_core *core);
 
 // Enemies functions
 void	init_enemies(t_core *core);

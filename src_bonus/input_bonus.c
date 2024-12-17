@@ -6,11 +6,23 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 11:49:26 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:05:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long_bonus.h"
+
+/**
+ * @brief Puts the current number of moves to the top left of the screen.
+ *
+ * @param core The core struct of the program.
+ */
+void	put_score(t_core *core)
+{
+	put_img_to_index(core, WALL, 0, 0);
+	mlx_string_put(core->mlx_ptr, core->win_ptr, 20, 20, 0x00FF0000,
+		ft_itoa(++core->player.moves));
+}
 
 /**
  * @brief Updates the position of the player depending on the key that was last
@@ -43,7 +55,7 @@ static void	update_position(int key, t_core *core)
 	if (movement)
 	{
 		update_enemies(core);
-		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
+		put_score(core);
 	}
 }
 
@@ -94,7 +106,7 @@ int	key_pressed(int key, t_core *core)
 	if (core->map.map[core->player.y][core->player.x] == 'E' &&
 		core->player.keys >= core->map.collectibles)
 	{
-		ft_printf("You got the strawberry!\n");
+		ft_printf("You got the strawberry in %d moves!\n", core->player.moves);
 		ft_kill(core, 0);
 	}
 	return (0);
