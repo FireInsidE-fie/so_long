@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 11:13:30 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:49:26 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,27 @@
  */
 static void	update_position(int key, t_core *core)
 {
+	int	movement;
+
+	movement = 0;
 	if ((key == 'w' || key == 65362)
-		&& core->map.map[core->player.y - 1][core->player.x] != '1')
-	{
+		&& core->map.map[core->player.y - 1][core->player.x] != '1'
+		&& ++movement)
 		core->player.y--;
-		update_enemies(core);
-		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
-	}
 	else if ((key == 'a' || key == 65361)
-		&& core->map.map[core->player.y][core->player.x - 1] != '1')
-	{
+		&& core->map.map[core->player.y][core->player.x - 1] != '1'
+		&& ++movement)
 		core->player.x--;
-		update_enemies(core);
-		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
-	}
 	else if ((key == 's' || key == 65364)
-		&& core->map.map[core->player.y + 1][core->player.x] != '1')
-	{
+		&& core->map.map[core->player.y + 1][core->player.x] != '1'
+		&& ++movement)
 		core->player.y++;
-		update_enemies(core);
-		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
-	}
 	else if ((key == 'd' || key == 65363)
-		&& core->map.map[core->player.y][core->player.x + 1] != '1')
-	{
+		&& core->map.map[core->player.y][core->player.x + 1] != '1'
+		&& ++movement)
 		core->player.x++;
+	if (movement)
+	{
 		update_enemies(core);
 		ft_printf("Number of moves so far : %d\n", ++core->player.moves);
 	}

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 22:35:01 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 11:40:09 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:46:37 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	init_enemies(t_core *core)
  */
 void	move_enemy(t_core *core, t_enemy *enemy, int direction)
 {
-	printf("%d\n", direction);
 	if (direction == 0 && core->map.map[enemy->y - 1][enemy->x] == '0')
 		enemy->y--;
 	else if (direction == 1 && core->map.map[enemy->y][enemy->x - 1] == '0')
