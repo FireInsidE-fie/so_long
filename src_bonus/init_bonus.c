@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:59:11 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:25:29 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,24 +88,35 @@ void	init_textures(t_core *core)
 
 /**
  * @brief Goes through the current map and sets the player's coordinates to the
- * first 'P' character found.
+ * first 'P' character found, as well as the exit's coordinates.
  *
  * @param core The core struct of the program.
  */
 void	init_player(t_core *core)
 {
+	int	x;
+	int	y;
+
 	core->player.keys = 0;
 	core->player.moves = 0;
-	core->player.y = 0;
-	while (core->map.map[core->player.y])
+	y = 0;
+	while (core->map.map[y])
 	{
-		core->player.x = 0;
-		while (core->map.map[core->player.y][core->player.x])
+		x = 0;
+		while (core->map.map[y][x])
 		{
-			if (core->map.map[core->player.y][core->player.x] == 'P')
-				return ;
-			core->player.x++;
+			if (core->map.map[y][x] == 'P')
+			{
+				core->player.y = y;
+				core->player.x = x;
+			}
+			else if (core->map.map[y][x] == 'E')
+			{
+				core->map.exit_y = y;
+				core->map.exit_x = x;
+			}
+			x++;
 		}
-		core->player.y++;
+		y++;
 	}
 }
