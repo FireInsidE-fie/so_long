@@ -125,6 +125,5 @@ int	key_pressed(int key, t_core *core)
 		ft_printf("You got the strawberry in %d moves!\n", core->player.moves);
 		ft_kill(core, 0);
 	}
-	display_number(core, 200, 200, 1234);
 	return (0);
 }
