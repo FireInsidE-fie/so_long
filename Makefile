@@ -17,7 +17,8 @@ CFILES_BONUS	=	$(SRCDIR_BONUS)so_long_bonus.c \
 					$(SRCDIR_BONUS)input_bonus.c \
 					$(SRCDIR_BONUS)flood_bonus.c \
 					$(SRCDIR_BONUS)map_bonus.c \
-					$(SRCDIR_BONUS)enemy_bonus.c
+					$(SRCDIR_BONUS)enemy_bonus.c \
+					$(SRCDIR_BONUS)score_bonus.c
 OBJS			=	$(CFILES:.c=.o)
 OBJS_BONUS		=	$(CFILES_BONUS:.c=.o)
 LIBFTDIR		=	libftprintf/

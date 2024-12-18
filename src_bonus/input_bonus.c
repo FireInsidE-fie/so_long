@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 16:58:56 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/18 12:25:01 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,6 @@ int	key_pressed(int key, t_core *core)
 		ft_printf("You got the strawberry in %d moves!\n", core->player.moves);
 		ft_kill(core, 0);
 	}
+	display_number(core, 200, 200, 1234);
 	return (0);
 }

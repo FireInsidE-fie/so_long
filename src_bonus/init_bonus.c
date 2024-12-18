@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 12:25:29 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/18 11:40:00 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,16 @@ void	init_textures(t_core *core)
 	core->textures[ENEMY] = init_image(core, ENEMY_PATH);
 	core->textures[STRAWBERRY] = init_image(core, STRAWBERRY_PATH);
 	core->textures[CHEST] = init_image(core, CHEST_PATH);
+	core->font[0] = init_image(core, ZERO_PATH);
+	core->font[1] = init_image(core, ONE_PATH);
+	core->font[2] = init_image(core, TWO_PATH);
+	core->font[3] = init_image(core, THREE_PATH);
+	core->font[4] = init_image(core, FOUR_PATH);
+	core->font[5] = init_image(core, FIVE_PATH);
+	core->font[6] = init_image(core, SIX_PATH);
+	core->font[7] = init_image(core, SEVEN_PATH);
+	core->font[8] = init_image(core, EIGHT_PATH);
+	core->font[9] = init_image(core, NINE_PATH);
 }
 
 /**

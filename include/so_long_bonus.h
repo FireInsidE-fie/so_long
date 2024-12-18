@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 16:47:51 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/18 12:17:45 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define MAX_TILES 50
 # define TEXTURE_COUNT 11
 # define MAX_ENEMIES 10
+# define FONT_LENGTH 10
 
 // XPM files paths
 # define EMPTY_PATH			"./assets/textures/empty.xpm"
@@ -31,6 +32,18 @@
 # define ENEMY_PATH			"./assets/textures/enemy.xpm"
 # define STRAWBERRY_PATH	"./assets/textures/strawberry.xpm"
 # define CHEST_PATH			"./assets/textures/chest.xpm"
+
+// Pixel font images
+# define ZERO_PATH			"./assets/font_bonus/0.xpm"
+# define ONE_PATH			"./assets/font_bonus/1.xpm"
+# define TWO_PATH			"./assets/font_bonus/2.xpm"
+# define THREE_PATH			"./assets/font_bonus/3.xpm"
+# define FOUR_PATH			"./assets/font_bonus/4.xpm"
+# define FIVE_PATH			"./assets/font_bonus/5.xpm"
+# define SIX_PATH			"./assets/font_bonus/6.xpm"
+# define SEVEN_PATH			"./assets/font_bonus/7.xpm"
+# define EIGHT_PATH			"./assets/font_bonus/8.xpm"
+# define NINE_PATH			"./assets/font_bonus/9.xpm"
 
 // Libft
 # include "../libftprintf/ft_printf.h"
@@ -110,6 +123,7 @@ typedef struct s_core
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_img	textures[TEXTURE_COUNT];
+	t_img	font[FONT_LENGTH];
 	int		animation;
 	t_map	map;
 	t_you	player;
@@ -146,5 +160,8 @@ void	put_score(t_core *core);
 // Enemies functions
 void	init_enemies(t_core *core);
 void	update_enemies(t_core *core);
+
+// Score functions
+void	display_number(t_core *core, int x, int y, int number);
 
 #endif //SO_LONG_BONUS_H

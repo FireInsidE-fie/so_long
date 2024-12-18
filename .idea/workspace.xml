@@ -7,9 +7,9 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
     <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppFormatterOtherPage" type="string" />
     <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="5" type="long" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
@@ -31,6 +31,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/so_long_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long_bonus.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/init_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/init_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/input_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/input_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +142,9 @@
       <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\src_bonus" />
       <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\assets\maps" />
       <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\assets\maps\bonus" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Aisling Fontaine\CLionProjects\so_long\assets" />
     </key>
   </component>
   <component name="RunManager" selected="Native Application.bonus">
@@ -249,6 +257,7 @@
       <workItem from="1734429736380" duration="4504000" />
       <workItem from="1734446556418" duration="3076000" />
       <workItem from="1734469428754" duration="16000" />
+      <workItem from="1734513583785" duration="6411000" />
     </task>
     <servers />
   </component>
