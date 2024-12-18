@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:43:48 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/18 15:44:20 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/18 16:19:54 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	display_background(t_core *core, int x, int y, int digits)
 	while (background_y < y + 40)
 	{
 		background_x = x - 4;
-		while (background_x < x + 32 * digits + 32)
+		while (background_x < x + 40 * digits)
 			mlx_pixel_put(core->mlx_ptr, core->win_ptr,
 				background_x++, background_y, 0);
 		background_y++;
