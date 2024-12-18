@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/18 13:04:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:00:27 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	main(int argc, char **argv)
 	init_enemies(&core);
 	init_window(&core);
 	render_map(&core);
-	display_number(&core, 200, 200, 1023456578);
 	mlx_hook(core.win_ptr, DestroyNotify, StructureNotifyMask, &ft_kill, &core);
 	mlx_hook(core.win_ptr, KeyPress, KeyPressMask, &key_pressed, &core);
 	mlx_loop(core.mlx_ptr);

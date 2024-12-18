@@ -31,16 +31,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/0.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/0.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/3.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/3.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/4.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/4.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/5.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/5.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/6.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/6.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/7.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/7.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/8.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/8.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font_bonus/9.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font_bonus/9.xpm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/input_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/input_bonus.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/score_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/score_bonus.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" afterDir="false" />
@@ -270,7 +260,7 @@
       <workItem from="1734429736380" duration="4504000" />
       <workItem from="1734446556418" duration="3076000" />
       <workItem from="1734469428754" duration="16000" />
-      <workItem from="1734513583785" duration="8666000" />
+      <workItem from="1734513583785" duration="14364000" />
     </task>
     <servers />
   </component>

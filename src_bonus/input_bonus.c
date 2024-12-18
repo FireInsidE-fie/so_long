@@ -6,23 +6,11 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/18 12:25:01 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:49:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long_bonus.h"
-
-/**
- * @brief Puts the current number of moves to the top left of the screen.
- *
- * @param core The core struct of the program.
- */
-void	put_score(t_core *core)
-{
-	put_img_to_index(core, WALL, 0, 0);
-	mlx_string_put(core->mlx_ptr, core->win_ptr, 20, 20, 0x00FF0000,
-		ft_itoa(++core->player.moves));
-}
 
 /**
  * @brief Updates the position of the player depending on the key that was last
@@ -54,8 +42,8 @@ static void	update_position(int key, t_core *core)
 		core->player.x++;
 	if (movement)
 	{
+		display_number(core, 20, 20, ++core->player.moves);
 		update_enemies(core);
-		put_score(core);
 	}
 }
 
