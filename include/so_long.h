@@ -43,6 +43,10 @@
 # include <inttypes.h>
 # include <fcntl.h>
 
+// X11
+# include <X11/X.h>
+# include <X11/keysym.h>
+
 // Enums
 enum e_textures
 {

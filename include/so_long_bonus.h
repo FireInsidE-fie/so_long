@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/14 11:45:03 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/18 12:17:45 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@
 # include <stdlib.h>
 # include <inttypes.h>
 # include <fcntl.h>
+
+// X11
+# include <X11/X.h>
+# include <X11/keysym.h>
 
 // Enums
 enum e_textures
