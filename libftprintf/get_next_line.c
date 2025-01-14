@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:06:01 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/29 17:00:28 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:54:50 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,12 +102,12 @@ static int	catchup_stash(char **stash)
 }
 
 /**
- * @brief this function reads from the <fd> file descriptor and returns the first line
- * it founds. a line is a string terminated by either a new line character or
- * the end of the file descriptor's contents. see above functions for each step
- * of the execution.
+ * @brief this function reads from the <fd> file descriptor and returns the
+ * first line it finds. a line is a string terminated by either a new line
+ * character or the end of the file descriptor's contents. see above functions
+ * for each step of the execution.
  * returns a malloced string containing the line it found, or NULL if an error
- * occured somewhere (most likely malloc error).
+ * occurred somewhere (most likely malloc error).
 */
 char	*get_next_line(int fd)
 {
