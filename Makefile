@@ -32,7 +32,7 @@ $(NAME):			$(OBJS) $(LIBFT)
 					$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $@
 
 %.o:				%.c
-					$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -c $^ -o $@
+					$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -g -c $^ -o $@
 
 $(LIBFT):			$(LIBFTDIR)/*.c
 					cd $(LIBFTDIR) && make
@@ -50,6 +50,6 @@ bonus:				$(NAME_BONUS)
 
 
 $(NAME_BONUS):		$(OBJS_BONUS) $(LIBFT)
-					$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $@
+					$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -g -o $@
 
 .PHONY:				all clean fclean re bonus

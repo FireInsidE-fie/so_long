@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/18 15:00:27 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:08:59 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ int	ft_kill(t_core *core, int err_code)
 	i = 0;
 	while (i < TEXTURE_COUNT)
 		mlx_destroy_image(core->mlx_ptr, core->textures[i++].img);
+	i = 0;
+	while (i < FONT_LENGTH)
+		mlx_destroy_image(core->mlx_ptr, core->font[i++].img);
 	if (err_code != 3)
 		destroy_map(&(core->map.map));
 	if (err_code != 3 && err_code != 4)

@@ -9,7 +9,6 @@
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppFormatterOtherPage" type="string" />
     <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="5" type="long" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
@@ -31,10 +30,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/so_long_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long_bonus.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/enemy_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/enemy_bonus.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/input_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/input_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +131,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -275,21 +274,15 @@
       <workItem from="1736892931131" duration="15000" />
       <workItem from="1737022957425" duration="26000" />
       <workItem from="1737536664587" duration="1201000" />
+      <workItem from="1737550292090" duration="36000" />
+      <workItem from="1737550334170" duration="111000" />
+      <workItem from="1737550529801" duration="144000" />
+      <workItem from="1737550679947" duration="660000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/so_long.c</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
