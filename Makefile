@@ -1,4 +1,5 @@
 NAME			=	so_long
+NAME_BONUS		=	so_long_bonus
 CC				=	gcc
 CFLAGS			=	-Wall -Wextra -Werror
 RM				=	rm
@@ -45,7 +46,10 @@ fclean:				clean
 re:					fclean all
 
 
-bonus:				$(OBJS_BONUS) $(LIBFT)
-					$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+bonus:				$(NAME_BONUS)
+
+
+$(NAME_BONUS):		$(OBJS_BONUS) $(LIBFT)
+					$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $@
 
 .PHONY:				all clean fclean re bonus

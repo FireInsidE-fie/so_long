@@ -31,8 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libftprintf/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf/get_next_line.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/score_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/score_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +129,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -145,6 +144,11 @@
     </key>
   </component>
   <component name="RunManager" selected="Native Application.bonus">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="all" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="all" CONFIG_NAME="all" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
@@ -258,7 +262,10 @@
       <workItem from="1734545696044" duration="128000" />
       <workItem from="1734778954671" duration="575000" />
       <workItem from="1734987263849" duration="9000" />
-      <workItem from="1736873570494" duration="120000" />
+      <workItem from="1736873570494" duration="1479000" />
+      <workItem from="1736892931131" duration="15000" />
+      <workItem from="1737022957425" duration="26000" />
+      <workItem from="1737536664587" duration="668000" />
     </task>
     <servers />
   </component>
