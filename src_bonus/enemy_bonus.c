@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 22:35:01 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 11:46:37 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:23:09 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,13 @@ void	move_enemy(t_core *core, t_enemy *enemy, int direction)
 		enemy->x++;
 }
 
-void	update_enemies(t_core *core)
+void	update_enemies(t_core *core, int enemy_status)
 {
 	int	i;
 
 	i = 0;
+	if (enemy_status % 2 == 0)
+		return ;
 	while (core->enemies[i].x != 0)
 	{
 		core->map.map[core->enemies[i].y][core->enemies[i].x] = '0';

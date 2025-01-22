@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:43:48 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/18 19:17:02 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:24:39 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	display_background(t_core *core, int x, int y, int digits)
 				background_x++, background_y, 0);
 		background_y++;
 	}
-
 }
 
 void	display_number(t_core *core, int x, int y, int number)

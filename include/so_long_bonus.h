@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/18 12:17:45 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:23:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ void	put_score(t_core *core);
 
 // Enemies functions
 void	init_enemies(t_core *core);
-void	update_enemies(t_core *core);
+void	update_enemies(t_core *core, int enemy_status);
 
 // Score functions
 void	display_number(t_core *core, int x, int y, int number);
