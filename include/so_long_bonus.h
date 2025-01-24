@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/24 14:14:09 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:28:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 # include "../libftprintf/get_next_line.h"
 
 // MinilibX
-#include "mlx.h"
+# include "mlx.h"
 
 // Stdlib
 # include <stdlib.h>
