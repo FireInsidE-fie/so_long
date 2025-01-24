@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 16:48:20 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 13:45:04 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,7 @@ void	parse_map(t_core *core, char *path);
 void	render_map(t_core *core);
 int		check_paths(t_core *core);
 char	**copy_map(t_core *core);
+void	check_path(t_core *core, char *path);
 
 // Input functions
 int		key_pressed(int key, t_core *core);

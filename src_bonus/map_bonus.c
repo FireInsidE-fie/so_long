@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 12:30:21 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 13:41:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void	parse_map(t_core *core, char *path)
 	int		fd;
 	int		i;
 
+	check_path(core, path);
 	fd = open(path, O_RDONLY);
 	if (fd < 0 && ft_printf("Error\n[!] - Failed to open the specified map!\n"
 			"Is the file path correct?\n"))

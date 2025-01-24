@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:27:17 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 16:10:35 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 13:44:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,19 @@ char	**copy_map(t_core *core)
 		i++;
 	}
 	return (copy);
+}
+
+void	check_path(t_core *core, char *path)
+{
+	char	**splits;
+
+	splits = ft_split(path, '.');
+	while (*splits)
+	{
+		if (ft_strncmp(*splits, "ber", 3) == 0 && !*(splits + 1))
+			return ;
+		splits++;
+	}
+	ft_printf("Error\n[!] - The specified file is not a .ber file!\n");
+		ft_kill(core, 3);
 }

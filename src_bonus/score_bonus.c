@@ -6,13 +6,13 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:43:48 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/22 10:24:39 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 13:27:39 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long_bonus.h"
 
-void	display_background(t_core *core, int x, int y, int digits)
+static void	display_background(t_core *core, int x, int y, int digits)
 {
 	int	background_x;
 	int	background_y;

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/22 10:23:31 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 13:41:44 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ typedef struct s_map
 	int		exit_y;
 }	t_map;
 
+// For holding player information
 typedef struct s_you
 {
 	int	x;
@@ -117,7 +118,7 @@ typedef struct s_enemy
 	int	y;
 }	t_enemy;
 
-// For core MLX and so_long functionalities
+// For core MLX and so_long functionalities, contains more or less everything
 typedef struct s_core
 {
 	void	*mlx_ptr;
@@ -133,7 +134,6 @@ typedef struct s_core
 // General functions
 int		ft_kill(t_core *core, int err_code);
 char	*ft_perror(char *str);
-void	destroy_map(char ***map);
 
 // Init functions
 t_core	init_mlx(void);
@@ -151,6 +151,8 @@ void	parse_map(t_core *core, char *path);
 void	render_map(t_core *core);
 int		check_paths(t_core *core);
 char	**copy_map(t_core *core);
+void	destroy_map(char ***map);
+void	check_path(t_core *core, char *path);
 
 // Input functions
 int		key_pressed(int key, t_core *core);
