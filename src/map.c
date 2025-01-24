@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:59:30 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/24 13:45:20 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:01:27 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,9 +141,9 @@ void	parse_map(t_core *core, char *path)
 		core->map.map[i] = get_next_line(fd);
 	core->map.height = i - 1;
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
+	close(fd);
 	if (check_map(core) == -1)
 		ft_kill(core, 4);
-	close(fd);
 }
 
 /**
