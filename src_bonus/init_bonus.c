@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/18 11:40:00 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:28:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 /**
  * @brief Initializes the MLX as well as a new window
  *
- * Shoutout to Lucy for the banger name change!
- * @return
+ * @return The core struct containing the mlx pointer
  */
 t_core	init_mlx(void)
 {
@@ -24,13 +23,14 @@ t_core	init_mlx(void)
 
 	core.mlx_ptr = mlx_init();
 	if (core.mlx_ptr == NULL)
-		ft_perror("Error\n[!] - Failed to initialize MLX!");
+		ft_perror("Error\n[!] - Failed to initialize MLX!\n");
 	return (core);
 }
 
 /**
  * @brief Initializes the window that will be used throughout the program.
  *
+ * Shoutout to Lucy for the banger name change!
  * @param core The core struct of the program.
  */
 void	init_window(t_core *core)
@@ -38,7 +38,7 @@ void	init_window(t_core *core)
 	core->win_ptr = mlx_new_window(core->mlx_ptr, core->map.width * TILE_SIZE,
 			core->map.height * TILE_SIZE, "c-leste");
 	if (core->win_ptr == NULL
-		&& ft_perror("Error\n[!] - Failed to create window!"))
+		&& ft_perror("Error\n[!] - Failed to create window!\n"))
 		ft_kill(core, 1);
 }
 
