@@ -29,7 +29,7 @@ all:				$(NAME)
 
 
 $(NAME):			$(OBJS) $(LIBFT)
-					$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $@
+					$(CC) $^ -Linclude -L/usr/lib -lmlx -Iinclude -lXext -lX11 -lm -lz -o $@
 
 %.o:				%.c
 					$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -g -c $^ -o $@
@@ -50,6 +50,6 @@ bonus:				$(NAME_BONUS)
 
 
 $(NAME_BONUS):		$(OBJS_BONUS) $(LIBFT)
-					$(CC) $^ -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -g -o $@
+					$(CC) $^ -Linclude -L/usr/lib -lmlx -Iinclude -lXext -lX11 -lm -lz -o $@
 
 .PHONY:				all clean fclean re bonus
