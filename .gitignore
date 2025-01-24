@@ -1,4 +1,4 @@
 *.o
-*.a
+libftprintf.a
 so_long
 so_long_bonus

@@ -31,71 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/so_long_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long_bonus.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/.github/workflows/ci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/Makefile.mk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/configure" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man1/mlx.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man1/mlx_loop.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man1/mlx_new_image.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man1/mlx_new_window.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man1/mlx_pixel_put.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man3/mlx.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man3/mlx_loop.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man3/mlx_new_image.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man3/mlx_new_window.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/man/man3/mlx_pixel_put.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_clear_window.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_destroy_display.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_destroy_image.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_destroy_window.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_expose_hook.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_ext_randr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_flush_event.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_get_color_value.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_get_data_addr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_hook.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_init.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int_anti_resize_win.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int_do_nothing.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int_get_visual.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int_param_event.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int_set_win_event_mask.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int_str_to_wordtab.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_int_wait_first_expose.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_key_hook.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_lib_xpm.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_loop.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_loop_hook.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_mouse.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_mouse_hook.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_new_image.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_new_window.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_pixel_put.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_put_image_to_window.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_rgb.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_screen_size.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_set_font.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_string_put.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_xpm.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/mlx_xpm.c.ok" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/rgb2c.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/test/Makefile.mk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/test/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/test/new_win.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/test/open.xpm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/test/open24.xpm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/test/open30.xpm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx_linux/test/run_tests.sh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
