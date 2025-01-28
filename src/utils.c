@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:27:17 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/24 14:39:53 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/28 09:53:37 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,22 +92,24 @@ char	**copy_map(t_core *core)
 
 void	check_path(t_core *core, char *path)
 {
+	int		i;
 	char	**splits;
 
+	i = 0;
 	splits = ft_split(path, '.');
-	while (*splits)
+	while (splits[i])
 	{
-		if (ft_strncmp(*splits, "ber", 3) == 0 && !*(splits + 1))
+		if (ft_strncmp(splits[i], "ber", 3) == 0 && !splits[i + 1])
 		{
-			while (*splits)
-				free(*(splits++));
-			free(*splits);
+			while (splits[i])
+				free(splits[i++]);
+			free(splits[i]);
 			free(splits);
 			return ;
 		}
-		free(*splits);
-		splits++;
+		free(splits[i++]);
 	}
+	free(splits[i]);
 	free(splits);
 	ft_printf("Error\n[!] - The specified file is not a .ber file!\n");
 	ft_kill(core, 3);
