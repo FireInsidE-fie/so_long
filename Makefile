@@ -32,7 +32,7 @@ $(NAME):			$(OBJS) $(LIBFT)
 					$(CC) $^ -Linclude -L/usr/lib -lmlx -Iinclude -lXext -lX11 -lm -lz -o $@
 
 %.o:				%.c
-					$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -g -c $^ -o $@
+					$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -c $^ -o $@
 
 $(LIBFT):			$(LIBFTDIR)/*.c
 					cd $(LIBFTDIR) && make
