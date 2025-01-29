@@ -1,6 +1,6 @@
 NAME			=	so_long
 NAME_BONUS		=	so_long_bonus
-CC				=	gcc
+CC				=	cc
 CFLAGS			=	-Wall -Wextra -Werror
 RM				=	rm
 RMFLAGS			=	-f

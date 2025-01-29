@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:27:17 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/28 09:53:37 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:04:24 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**copy_map(t_core *core)
 	i = 0;
 	while (i < core->map.height)
 	{
-		copy[i] = ft_calloc(core->map.width, sizeof(char));
+		copy[i] = ft_calloc(core->map.width, sizeof(char)); // Need malloc protection
 		j = 0;
 		while (j < core->map.width)
 		{
@@ -96,7 +96,7 @@ void	check_path(t_core *core, char *path)
 	char	**splits;
 
 	i = 0;
-	splits = ft_split(path, '.');
+	splits = ft_split(path, '.'); // Need malloc protection
 	while (splits[i])
 	{
 		if (ft_strncmp(splits[i], "ber", 3) == 0 && !splits[i + 1])
@@ -105,6 +105,7 @@ void	check_path(t_core *core, char *path)
 				free(splits[i++]);
 			free(splits[i]);
 			free(splits);
+			// All those frees could be just a function to be frank
 			return ;
 		}
 		free(splits[i++]);
