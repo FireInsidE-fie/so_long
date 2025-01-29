@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/15 17:16:03 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:32:37 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ int	key_pressed(int key, t_core *core)
 	{
 		core->player.keys++;
 		core->map.map[core->player.y][core->player.x] = '0';
-		if (core->player.keys == core->map.collectibles)
+		if (core->player.keys == core->map.collectibles_count)
 			put_img_to_index(core, STRAWBERRY,
 				core->map.exit_x, core->map.exit_y);
 	}
 	if (core->map.map[core->player.y][core->player.x] == 'E' &&
-		core->player.keys >= core->map.collectibles)
+		core->player.keys >= core->map.collectibles_count)
 	{
 		ft_printf("You got the strawberry!\n");
 		ft_kill(core, 0);

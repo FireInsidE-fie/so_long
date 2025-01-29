@@ -9,7 +9,6 @@
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppFormatterOtherPage" type="string" />
     <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="5" type="long" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
@@ -31,11 +30,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libftprintf/libft/ft_split.c" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf/libft/ft_split.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/utils_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/utils_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/so_long_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long_bonus.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/flood.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/flood.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/flood_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/flood_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/input_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/input_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/map_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/map_bonus.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

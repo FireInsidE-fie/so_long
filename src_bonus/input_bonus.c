@@ -104,12 +104,12 @@ int	key_pressed(int key, t_core *core)
 	{
 		core->player.keys++;
 		core->map.map[core->player.y][core->player.x] = '0';
-		if (core->player.keys == core->map.collectibles)
+		if (core->player.keys == core->map.collectibles_count)
 			put_img_to_index(core, STRAWBERRY,
 				core->map.exit_x, core->map.exit_y);
 	}
 	if (core->map.map[core->player.y][core->player.x] == 'E' &&
-		core->player.keys >= core->map.collectibles)
+		core->player.keys >= core->map.collectibles_count)
 	{
 		ft_printf("You got the strawberry in %d moves!\n", core->player.moves);
 		ft_kill(core, 0);

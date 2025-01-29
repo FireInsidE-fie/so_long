@@ -68,7 +68,7 @@ int	check_paths(t_core *core)
 	if (map_copy)
 		flood_check(map_copy, x, y, &sum);
 	destroy_map(&map_copy);
-	if (sum != core->map.collectibles + 1
+	if (sum != core->map.collectibles_count + 1
 		&& ft_perror("Error\n[!] - Map does not contain a valid path!\n"))
 		return (-1);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/24 14:01:18 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:44:16 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,26 +49,26 @@ int	check_items(t_core *core)
 {
 	int	x;
 	int	y;
-	int	sum;
 
 	y = -1;
-	sum = 0;
-	core->map.collectibles = 0;
 	while (++y < core->map.height)
 	{
 		x = -1;
 		while (++x < core->map.width - 1)
 		{
 			if (core->map.map[y][x] == 'C')
-				core->map.collectibles++;
-			else if (core->map.map[y][x] == 'P' || core->map.map[y][x] == 'E')
-				sum++;
+				core->map.collectibles_count++;
+			else if (core->map.map[y][x] == 'P')
+				core->map.player_count++;
+			else if (core->map.map[y][x] == 'E')
+				core->map.exit_count++;
 			else if (core->map.map[y][x] != '1' && core->map.map[y][x] != '0'
 				&& core->map.map[y][x] != 'S')
 				return (ft_perror("Error\nMap contains bad characters!\n"), -1);
 		}
 	}
-	if ((sum != 2 || core->map.collectibles < 1)
+	if ((core->map.collectibles_count < 1 || core->map.exit_count < 1
+			|| core->map.player_count < 1)
 		&& ft_perror("Error\n[!] - Map does not contain necessary items!\n"))
 		return (-1);
 	return (0);
