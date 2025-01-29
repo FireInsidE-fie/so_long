@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/22 14:08:59 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:15:03 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 
 	core = init_mlx();
 	if (argc != 2 || core.mlx_ptr == NULL)
-		return (free(core.mlx_ptr), -1);
+		return (ft_perror("error\n[!] - failed to initialize mlx!\n"), -1);
 	init_textures(&core);
 	core.animation = 0;
 	parse_map(&core, argv[1]);
