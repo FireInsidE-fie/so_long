@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:59:30 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/24 14:01:27 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:06:36 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,26 +61,26 @@ int	check_items(t_core *core)
 {
 	int	x;
 	int	y;
-	int	sum;
 
 	y = -1;
-	sum = 0;
-	core->map.collectibles = 0;
 	while (++y < core->map.height)
 	{
 		x = -1;
 		while (++x < core->map.width - 1)
 		{
 			if (core->map.map[y][x] == 'C')
-				core->map.collectibles++;
-			else if (core->map.map[y][x] == 'P' || core->map.map[y][x] == 'E')
-				sum++;
+				core->map.collectibles_count++;
+			else if (core->map.map[y][x] == 'P')
+				core->map.player_count++;
+			else if (core->map.map[y][x] == 'E')
+				core->map.exit_count++;
 			else if (core->map.map[y][x] != '1' && core->map.map[y][x] != '0'
 			&& ft_perror("Error\n[!] - Map contains bad characters!\n"))
 				return (-1);
 		}
 	}
-	if ((sum != 2 || core->map.collectibles < 1)
+	if ((core->map.collectibles_count < 1 || core->map.exit_count < 1
+			|| core->map.player_count < 1)
 		&& ft_perror("Error\n[!] - Map does not contain necessary items!\n"))
 		return (-1);
 	return (0);
@@ -111,8 +111,7 @@ int	check_map(t_core *core)
 			&& ft_perror("Error\n[!] - Map is not surrounded by wall2!\n"))
 			return (-1);
 	}
-	if (check_width(core) == -1
-		|| check_items(core) == -1
+	if (check_width(core) == -1 || check_items(core) == -1
 		|| check_paths(core) == -1)
 		return (-1);
 	return (0);
@@ -142,6 +141,9 @@ void	parse_map(t_core *core, char *path)
 	core->map.height = i - 1;
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
 	close(fd);
+	core->map.collectibles_count = 0;
+	core->map.exit_count = 0;
+	core->map.player_count = 0;
 	if (check_map(core) == -1)
 		ft_kill(core, 4);
 }
