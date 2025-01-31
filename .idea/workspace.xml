@@ -9,7 +9,6 @@
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppFormatterOtherPage" type="string" />
     <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="5" type="long" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
@@ -32,7 +31,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a78c83b8-1c57-49dd-953e-946fe535da53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/so_long.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/so_long.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/init_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/init_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/map_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/map_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/so_long_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/utils_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/utils_bonus.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,11 +297,6 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Native Application.all" />
       <item itemvalue="Native Application.bonus" />
@@ -346,7 +347,9 @@
       <workItem from="1737980811013" duration="85000" />
       <workItem from="1738053137860" duration="1280000" />
       <workItem from="1738153240177" duration="406000" />
-      <workItem from="1738192064005" duration="152000" />
+      <workItem from="1738192064005" duration="1258000" />
+      <workItem from="1738317720309" duration="20000" />
+      <workItem from="1738320761671" duration="2271000" />
     </task>
     <servers />
   </component>

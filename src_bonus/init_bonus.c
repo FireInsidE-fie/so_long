@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:34:31 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/24 11:28:31 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:52:24 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_core	init_mlx(void)
 {
 	t_core	core;
 
+	ft_bzero(&core, sizeof(t_core));
 	core.mlx_ptr = mlx_init();
 	if (core.mlx_ptr == NULL)
 		ft_perror("Error\n[!] - Failed to initialize MLX!\n");

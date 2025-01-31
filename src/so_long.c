@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:05 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/30 00:05:12 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:28:30 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ int	main(int argc, char **argv)
 	t_core	core;
 
 	core = init_mlx();
-	if (argc != 2 || core.mlx_ptr == NULL)
-		return (ft_perror("error\n[!] - failed to initialize mlx!\n"), -1); // CHANGE THIS PLEASE
+	if (argc != 2)
+		return (ft_perror("Error\n[!] - Wrong calling syntax! \
+(./so_long <map_path>)\n"), -1);
+	if (core.mlx_ptr == NULL)
+		return (ft_perror("Error\n[!] - failed to initialize mlx!\n"), -1);
 	init_textures(&core);
 	parse_map(&core, argv[1]);
 	init_player(&core);

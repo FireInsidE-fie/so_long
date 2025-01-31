@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 16:25:14 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/29 13:27:22 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:51:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int	check_items(t_core *core)
 				return (ft_perror("Error\nMap contains bad characters!\n"), -1);
 		}
 	}
-	if ((core->map.collectibles_count < 1 || core->map.exit_count < 1
-			|| core->map.player_count < 1)
+	if ((core->map.collectibles_count < 1 || core->map.exit_count != 1
+			|| core->map.player_count != 1)
 		&& ft_perror("Error\n[!] - Map does not contain necessary items!\n"))
 		return (-1);
 	return (0);
@@ -124,15 +124,14 @@ void	parse_map(t_core *core, char *path)
 		ft_kill(core, 3);
 	i = 0;
 	core->map.map = ft_calloc(MAX_TILES, sizeof(char *));
+	if (core->map.map == NULL)
+		ft_kill(core, 3);
 	core->map.map[i] = get_next_line(fd);
 	while (core->map.map[i++])
 		core->map.map[i] = get_next_line(fd);
 	close(fd);
 	core->map.height = i - 1;
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
-	core->map.collectibles_count = 0;
-	core->map.exit_count = 0;
-	core->map.player_count = 0;
 	if (check_map(core) == -1)
 		ft_kill(core, 4);
 }

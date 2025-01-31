@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:59:30 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/30 00:00:13 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:44:09 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,16 +122,15 @@ void	parse_map(t_core *core, char *path)
 			"Is the file path correct?\n"))
 		ft_kill(core, 3);
 	i = 0;
-	core->map.map = ft_calloc(MAX_TILES, sizeof(char *)); // Need malloc protection
-	core->map.map[i] = get_next_line(fd); // Need malloc protection
+	core->map.map = ft_calloc(MAX_TILES, sizeof(char *));
+	if (core->map.map == NULL)
+		ft_kill(core, 3);
+	core->map.map[i] = get_next_line(fd);
 	while (core->map.map[i++])
-		core->map.map[i] = get_next_line(fd); // Need malloc protection
+		core->map.map[i] = get_next_line(fd);
 	close(fd);
 	core->map.height = i - 1;
 	core->map.width = (int)ft_strlen(core->map.map[i - 2]);
-	core->map.collectibles_count = 0; // Can be replaced with bzero
-	core->map.exit_count = 0;
-	core->map.player_count = 0;
 	if (check_map(core) == -1)
 		ft_kill(core, 4);
 }
