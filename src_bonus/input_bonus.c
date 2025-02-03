@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:16:14 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/22 10:24:23 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:50:36 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 static void	update_position(int key, t_core *core)
 {
 	int			movement;
-	static int	enemy_status;
 
 	movement = 0;
 	if ((key == 'w' || key == 65362)
@@ -44,7 +43,7 @@ static void	update_position(int key, t_core *core)
 	if (movement)
 	{
 		display_number(core, 20, 20, ++core->player.moves);
-		update_enemies(core, enemy_status++);
+		update_enemies(core);
 	}
 }
 

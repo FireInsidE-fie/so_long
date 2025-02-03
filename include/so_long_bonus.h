@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/29 11:34:05 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:50:13 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define TILE_SIZE 80
 # define MAX_TILES 50
 # define TEXTURE_COUNT 11
-# define MAX_ENEMIES 10
+# define MAX_ENEMIES 50
 # define FONT_LENGTH 10
 
 // XPM files paths
@@ -163,7 +163,7 @@ void	put_score(t_core *core);
 
 // Enemies functions
 void	init_enemies(t_core *core);
-void	update_enemies(t_core *core, int enemy_status);
+void	update_enemies(t_core *core);
 
 // Score functions
 void	display_number(t_core *core, int x, int y, int number);
