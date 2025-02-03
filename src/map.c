@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:59:30 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/31 14:44:09 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:05:56 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,9 @@ int	check_map(t_core *core)
 			|| core->map.map[core->map.height - 1][x] != '1')
 			&& ft_perror("Error\n[!] - Map 1s not surrounded by walls!\n"))
 			return (-1);
+	if ((core->map.map[core->map.height - 1][x] != '1')
+		&& ft_perror("Error\n[!] - Map 1s not surrounded by walls!\n"))
+		return (-1);
 	y = 0;
 	while (++y < core->map.height - 1)
 	{
@@ -118,7 +121,7 @@ void	parse_map(t_core *core, char *path)
 
 	check_path(core, path);
 	fd = open(path, O_RDONLY);
-	if (fd < 0 && ft_printf("Error\n[!] - Failed to open the specified map!\n"
+	if (fd < 0 && ft_perror("Error\n[!] - Failed to open the specified map!\n"
 			"Is the file path correct?\n"))
 		ft_kill(core, 3);
 	i = 0;

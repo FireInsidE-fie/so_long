@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:19:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/03 13:50:13 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:57:45 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // General macros
 # define TILE_SIZE 80
-# define MAX_TILES 50
+# define MAX_TILES 100
 # define TEXTURE_COUNT 11
 # define MAX_ENEMIES 50
 # define FONT_LENGTH 10
