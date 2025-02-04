@@ -29,8 +29,6 @@ valgrind --leak-check=full ./so_long assets/maps/invalid_map9.ber
 
 read -r meh
 
-sleep 2
-
 valgrind --leak-check=full ./so_long assets/maps/valid_map1.ber
 valgrind --leak-check=full ./so_long assets/maps/valid_map2.ber
 valgrind --leak-check=full ./so_long assets/maps/valid_map3.ber
@@ -39,11 +37,22 @@ valgrind --leak-check=full ./so_long assets/maps/valid_map5.ber
 
 echo "[!] - Compiling bonus..."
 
+read -r meh
+
 make bonus
+
+echo "[!] - Beginning invalid syntax checks..."
 
 read -r meh
 
+valgrind --leak-check=full ./so_long_bonus
+valgrind --leak-check=full ./so_long_bonus assets/
+valgrind --leak-check=full ./so_long_bonus assets/ladfj
+valgrind --leak-check=full ./so_long_bonus assets/maps/valid_map5
+
 echo "[!] - Checking bonus error checks..."
+
+read -r meh
 
 valgrind --leak-check=full ./so_long_bonus assets/maps/invalid_map1.ber
 valgrind --leak-check=full ./so_long_bonus assets/maps/invalid_map2.ber
