@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:27:17 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/31 14:52:02 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:15:55 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	destroy_map(char ***map)
 {
 	int	i;
 
+	if (!(*map))
+		return ;
 	i = 0;
 	while (i < MAX_TILES)
 		free((*map)[i++]);
